@@ -2,15 +2,15 @@ module.exports = (sequelize, DataTypes) => {
     const Appointment = sequelize.define('appointment', {
 
       appointment_start: {
-          type: DataTypes.DATE ,
+          type: DataTypes.INTEGER,
           allowNull: false,
       },
       appointment_end: {
-          type: DataTypes.DATE ,
+          type: DataTypes.INTEGER,
           allowNull: false,
-          validate: {
-            isDate: true
-            },
+          // validate: {
+          //   isDate: true
+          //   },
       },
    
       appointment_patient_session: {

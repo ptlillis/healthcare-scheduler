@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 
     },
     patient_email: {
-    type: Sequelize.STRING,
+    type: DataTypes.STRING,
     allowNull: false,
     validate: {
       isEmail:true

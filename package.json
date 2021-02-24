@@ -1,19 +1,26 @@
 {
-  "name": "orm-to-sequelize",
+  "name": "healthcare-scheduler",
   "version": "1.0.0",
-  "description": "",
+  "description": "A tool to create appointments to pair patients seeking in-home care with licensed healthcare provider This application will use three tables within a database utilizing sequelize, express, and passport frameworks to join corresponding data",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptlillis/healthcare-scheduler.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptlillis/healthcare-scheduler/issues"
+  },
+  "homepage": "https://github.com/ptlillis/healthcare-scheduler#readme",
   "dependencies": {
-    "express": "^4.16.3",
-    "mysql2": "^1.6.4",
-    "sequelize": "^4.41.2"
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
   }
 }

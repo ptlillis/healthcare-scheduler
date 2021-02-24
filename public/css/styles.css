@@ -1,4 +1,4 @@
-.todo-list {
+/* .todo-list {
   margin: 0 auto;
   margin-top: 75px;
 }
@@ -16,4 +16,8 @@ input.new-item:focus {
 
 .edit {
   width: 100%;
+} */
+form.signup,
+form.login {
+  margin-top: 50px;
 }

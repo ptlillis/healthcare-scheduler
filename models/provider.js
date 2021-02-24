@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             is: /^[a-z]+$/i 
         }},
         provider_email: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
           allowNull: false,
         validate: {
           isEmail:true
@@ -30,9 +30,9 @@ module.exports = (sequelize, DataTypes) => {
 
     });
 
-    Provider.associate = (models) => {
-      Provider.belongsToMany(models.Patient, { as: 'ProviderInPatient', through: models.Appointment, foreignKey: 'provider_id'});
-    }
+    // Provider.associate = (models) => {
+    //   Provider.belongsToMany(models.Patient, { as: 'ProviderInPatient', through: models.Appointment, foreignKey: 'provider_id'});
+    // }
     return Provider;
   };
   

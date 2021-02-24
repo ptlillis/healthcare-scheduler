@@ -20,7 +20,9 @@
   "homepage": "https://github.com/ptlillis/healthcare-scheduler#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
     "sequelize": "^6.5.0"
   }
 }

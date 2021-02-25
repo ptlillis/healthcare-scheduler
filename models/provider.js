@@ -1,20 +1,28 @@
+const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
     const Provider = sequelize.define('provider', {
      
-      provider_First_name: {
-        type: DataTypes.STRING,
+      provider_id:{
+        type: Sequelize.INTEGER,
+        unique: true,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+      },
+        provider_First_name: {
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
           is: /^[a-z]+$/i, 
-      },
+      }},
         provider_last_name: {
-          type: DataTypes.STRING,
+          type: Sequelize.STRING,
           allowNull: false,
           validate: {
             is: /^[a-z]+$/i 
         }},
-        provider_email: {
-        type: DataTypes.STRING,
+        email: {
+        type: Sequelize.STRING,
           allowNull: false,
         validate: {
           isEmail:true
@@ -23,16 +31,14 @@ module.exports = (sequelize, DataTypes) => {
           args: true,
           msg: 'Email address already in use!'
         }
-
-      }
-
-    },
+},
 
     });
 
-    // Provider.associate = (models) => {
-    //   Provider.belongsToMany(models.Patient, { as: 'ProviderInPatient', through: models.Appointment, foreignKey: 'provider_id'});
-    // }
+    Provider.associate = (models) => {
+      Provider.belongsToMany(models.patient, { as: 'ProviderInPatient', through: models.appointment, foreignKey: 'provider_id'});
+    }
+
     return Provider;
   };
   

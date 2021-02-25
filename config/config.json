@@ -10,14 +10,14 @@
   "test": {
     "username": "root",
     "password": "password",
-    "database": "database_test",
+    "database": "scheduler",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "password",
-    "database": "database_production",
+    "database": "scheduler",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

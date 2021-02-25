@@ -38,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     Provider.associate = (models) => {
       Provider.belongsToMany(models.patient, { as: 'ProviderInPatient', through: models.appointment, foreignKey: 'provider_id'});
     }
+
     return Provider;
   };
   

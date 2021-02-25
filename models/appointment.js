@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
             isDate: true
             }
       },
-   
       appointment_session: {
           type: Sequelize.INTEGER(11),
           allowNull: false,

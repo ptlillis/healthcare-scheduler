@@ -1,3 +1,4 @@
+console.log("am i linked");
 $(document).ready(() => {
     // Getting references to our form and input
     const patientForm = $("form.patient-form");
@@ -6,6 +7,7 @@ $(document).ready(() => {
     const address = $("input#patient_Address")
   
     // When the signup button is clicked, we validate the email and password are not blank
+    // const patientForm = document.getElementById("submit");
     patientForm.on("submit", event => {
       event.preventDefault();
       const patientData = {

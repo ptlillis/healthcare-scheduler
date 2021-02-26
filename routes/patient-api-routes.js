@@ -7,8 +7,8 @@ const db = require('../models');
 module.exports = (app) => {
   app.get('/api/patient', (req, res) => {
     const query = {};
-    if (req.query.user_id) {
-      query.UserId = req.query.user_id;
+    if (req.query.patient_id) {
+      query.UserId = req.query.patient_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join

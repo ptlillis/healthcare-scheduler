@@ -1,37 +1,38 @@
 $(document).ready(() => {
     // Getting references to our form and input
-    const signUpForm = $("form.signup");
+    const providerForm = $("form.provider-form");
     const providerFirstName = $("input#provider_First_name")
-    const lastName = $("input#last-name-input")
-    const emailInput = $("input#email-input");
-    const passwordInput = $("input#password-input");
+    const providerLastName = $("input#provider_last_name")
   
     // When the signup button is clicked, we validate the email and password are not blank
-    signUpForm.on("submit", event => {
+    providerForm.on("submit", event => {
       event.preventDefault();
-      const userData = {
-        email: emailInput.val().trim(),
-        password: passwordInput.val().trim()
+      const providerData = {
+        provider_First_name: providerFirstName.val().trim(),
+        provider_last_name: providerLastName.val().trim()
+      
       };
   
-      if (!userData.email || !userData.password) {
+      if (!providerData.providerFirstName || ! providerData.providerLastName) {
         return;
       }
       // If we have an email and password, run the signUpUser function
-      signUpUser(userData.email, userData.password);
-      emailInput.val("");
-      passwordInput.val("");
+      signUpProvider(providerData.provider_First_name, providerData.provider_last_name);
+      providerFirstName.val("");
+      providerLastName.val("");
     });
   
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function signUpUser(email, password) {
-      $.post("/api/signup", {
-        email: email,
-        password: password
+    function signUpProvider(firstName, lastName) {
+
+    // Confused which api post should be
+      $.post("/api/provider-signup", {
+        provider_First_name: firstName,
+        provider_last_name: lastName,
       })
         .then(() => {
-          window.location.replace("/members");
+          window.location.replace("/appointments");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
         .catch(handleLoginErr);
@@ -42,4 +43,6 @@ $(document).ready(() => {
       $("#alert").fadeIn(500);
     }
   });
+  
+
   

@@ -1,0 +1,214 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+	background-color: #6495ed;
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #ddd;
+	color: #6495ed;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #6495ed;
+	color: white;
+}
+
+.pic-wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+figure {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	/*animation*/
+
+	animation: slideShow 24s linear infinite 0s;
+	-o-animation: slideShow 24s linear infinite 0s;
+	-moz-animation: slideShow 24s linear infinite 0s;
+	-webkit-animation: slideShow 24s linear infinite 0s;
+}
+
+figurecaption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+}
+
+.pic-1 {
+	opacity: 1;
+	background: url(./assets/cdc-4tQoqoY7iYA-unsplash.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.pic-2 {
+	animation-delay: 6s;
+	-o-animation-delay: 6s;
+	-moz--animation-delay: 6s;
+	-webkit-animation-delay: 6s;
+	background: url(./assets/hush-naidoo-pA0uoltkwao-unsplash.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.pic-3 {
+	animation-delay: 12s;
+	-o-animation-delay: 12s;
+	-moz--animation-delay: 12s;
+	-webkit-animation-delay: 12s;
+	background: url(./assets/jeshoots-com-l0j0DHVWcIE-unsplash.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.pic-4 {
+	animation-delay: 18s;
+	-o-animation-delay: 18s;
+	-moz--animation-delay: 18s;
+	-webkit-animation-delay: 18s;
+	background: url(./assets/rusty-watson-yIGinlYA6t8-unsplash.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.pic-5 {
+	animation-delay: 24s;
+	-o-animation-delay: 24s;
+	-moz--animation-delay: 24s;
+	-webkit-animation-delay: 24s;
+	background: url(./assets/georg-arthur-pflueger-eO_JhqabBY0-unsplash.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/* keyframes*/
+
+@keyframes slideShow {
+	0% {
+		opacity: 0;
+		transform: scale(1);
+		-ms-transform: scale(1);
+	}
+	5% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+		transform: scale(1.1);
+		-ms-transform: scale(1.1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+		-ms-transformm: scale(1);
+	}
+}
+@-o-keyframes slideShow {
+	0% {
+		opacity: 0;
+		-o-transform: scale(1);
+	}
+	5% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+		-o-transform: scale(1.1);
+	}
+	100% {
+		opacity: 0;
+		-o-transformm: scale(1);
+	}
+}
+@-moz-keyframes slideShow {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(1);
+	}
+	5% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+		-moz-transform: scale(1.1);
+	}
+	100% {
+		opacity: 0;
+		-moz-transformm: scale(1);
+	}
+}
+@-webkit-keyframes slideShow {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+	}
+	5% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+		-webkit-transform: scale(1.1);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transformm: scale(1);
+	}
+}
+footer {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #6495ed;
+	color: white;
+	text-align: center;
+	font-style: bold;
+	font-size: 17px;
+}

@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
     validate: {
       isEmail:true
       },

@@ -21,19 +21,19 @@ module.exports = (sequelize, DataTypes) => {
           validate: {
             is: /^[a-z]+$/i 
         }},
-        email: {
-        type: Sequelize.STRING,
-          allowNull: false,
-        validate: {
-          isEmail:true
-          },
-        unique: {
-          args: true,
-          msg: 'Email address already in use!'
-        }
+        // email: {
+        // type: Sequelize.STRING,
+        //   allowNull: true,
+        // validate: {
+        //   isEmail:true
+        //   },
+        // unique: {
+        //   args: true,
+        //   msg: 'Email address already in use!'
+        // }
 },
 
-    });
+    );
 
     Provider.associate = (models) => {
       Provider.belongsToMany(models.patient, { as: 'ProviderInPatient', through: models.appointment, foreignKey: 'provider_id'});

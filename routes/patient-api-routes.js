@@ -13,9 +13,9 @@ module.exports = (app) => {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
-    db.Post.findAll({
+    db.patient.findAll({
       where: query,
-      include: [db.User],
+      include: [db.provider],
     }).then((dbPatient) => res.json(dbPatient));
   });
 
@@ -24,22 +24,24 @@ module.exports = (app) => {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
-    db.Patient.findOne({
+    db.patient.findOne({
       where: {
         id: req.params.id,
       },
-      include: [db.User],
+      include: [db.provider],
     }).then((dbPatient) => res.json(dbPatient));
   });
 
   // POST route for saving a new patient
   app.post('/api/patient', (req, res) => {
-    db.Patient.create(req.body).then((dbPatient) => res.json(dbPatient));
+    console.log('======================',req.body);
+    db.patient.create(req.body).then((dbPatient) => res.json(dbPatient));
+
   });
 
   // DELETE route for deleting patients
   app.delete('/api/patient/:id', (req, res) => {
-    db.Patient.destroy({
+    db.patient.destroy({
       where: {
         id: req.params.id,
       },
@@ -48,7 +50,7 @@ module.exports = (app) => {
 
   // PUT route for updating patients
   app.put('/api/patient', (req, res) => {
-    db.Patient.update(req.body, {
+    db.patient.update(req.body, {
       where: {
         id: req.body.id,
       },

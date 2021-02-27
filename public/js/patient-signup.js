@@ -3,45 +3,51 @@ $(document).ready(() => {
     // Getting references to our form and input
     const patientForm = $("form.patient-form");
     const patientFirstName = $("input#patient_First_name")
-    const patientLastName = $("input#patient_last_name")
+    const patientLastName = $("input#patient_Last_name")
     const address = $("input#patient_Address")
   
     // When the signup button is clicked, we validate the email and password are not blank
     // const patientForm = document.getElementById("submit");
     patientForm.on("submit", event => {
+
       event.preventDefault();
       const patientData = {
+        
         patient_First_name: patientFirstName.val().trim(),
-        patient_last_name: patientLastName.val().trim(),
-        patient_Address: address
+        patient_Last_name: patientLastName.val().trim(),
+        patient_Address: address.val().trim(),
       
       };
-  
-      if (!patientData.patientFirstName || ! patientData.patientLastName || patientData.address) {
+  console.log('patientData',patientData);
+      if (!patientData.patient_First_name || !patientData.patient_Last_name || !patientData.patient_Address) {
         return;
       }
       // If we have an email and password, run the signUpUser function
-      signUppatient(patientData.patient_First_name, patientData.patient_last_name, patientData.patient_Address);
+      signUpPatient(patientData.patient_First_name, patientData.patient_Last_name, patientData.patient_Address);
       patientFirstName.val("");
       patientLastName.val("");
       address.val("");
+      console.log('signUpPatient');
     });
   
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function signUppatient(firstName, lastName, address) {
-
+    function signUpPatient(firstName, lastName, address) {
+console.log(firstName, lastName, address);
     // Confused which api post should be
-      $.post("/api/patient-signup", {
+      $.post("/api/patient", {
         patient_First_name: firstName,
-        patient_last_name: lastName,
+        patient_Last_name: lastName,
         patient_Address: address
       })
-        .then(() => {
-          window.location.replace("/appointments");
-          // If there's an error, handle it by throwing up a bootstrap alert
-        })
-        .catch(handleLoginErr);
+      .done(function() {
+        window.location.replace("/members");
+        alert( "second success" );
+      })
+      .fail(function(err) {
+        console.log(err);
+        alert( "error" );
+      })
     }
   
     function handleLoginErr(err) {
@@ -49,4 +55,5 @@ $(document).ready(() => {
       $("#alert").fadeIn(500);
     }
   });
+  
   

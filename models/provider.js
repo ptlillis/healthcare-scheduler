@@ -1,7 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
     const Provider = sequelize.define('provider', {
-     
       provider_id:{
         type: Sequelize.INTEGER,
         unique: true,
@@ -21,24 +20,49 @@ module.exports = (sequelize, DataTypes) => {
           validate: {
             is: /^[a-z]+$/i 
         }},
-        // email: {
-        // type: Sequelize.STRING,
-        //   allowNull: true,
-        // validate: {
-        //   isEmail:true
-        //   },
-        // unique: {
-        //   args: true,
-        //   msg: 'Email address already in use!'
-        // }
-},
-
-    );
-
+        contact_email: {
+        type: Sequelize.STRING,
+          allowNull: true,
+        validate: {
+          isEmail:true
+          }},
+        license:{
+          type: Sequelize.STRING,
+          allowNull: true,
+          validate: {
+            is: /^[a-z]+$/i 
+        }},
+        monday:{
+          type:sequelize.BOOLEAN,
+          default :false
+        },
+        tuesday:{
+          type:sequelize.BOOLEAN,
+          default :false
+        },
+        wednsday:{
+          type:sequelize.BOOLEAN,
+          default :false
+        },
+        thursday:{
+          type:sequelize.BOOLEAN,
+          default :false
+        },
+        friday:{
+          type:sequelize.BOOLEAN,
+          default :false
+        },
+        saturday:{
+          type:sequelize.BOOLEAN,
+         default :false
+        },
+        sunday:{
+          type:sequelize.BOOLEAN,
+          default :false
+        }
+})
     Provider.associate = (models) => {
       Provider.belongsToMany(models.patient, { as: 'ProviderInPatient', through: models.appointment, foreignKey: 'provider_id'});
     }
-
     return Provider;
   };
-  

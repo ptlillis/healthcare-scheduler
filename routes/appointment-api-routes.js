@@ -14,7 +14,7 @@ module.exports = (app) => {
         db.Appointment.findAll({
       where: query,
       include: [db.User], 
-    }).then((dbAppointment) => res.json(dAppointment));
+    }).then((dbAppointment) => res.json(dbAppointment));
   });
 
   // Get route for retrieving a single appointment...?

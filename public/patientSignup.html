@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Sign-Up</title>
-</head>
-<body>
-    
-    <h1>Patient Sign Up</h1>
 
-    <form class="patient-form" id="patient-form">
-        <label type="text" id="patient_First_name">First Name:</label><br>
-        <input type="text" id="patient_First_name" name="patient_First_name"><br>
-        <label type="text" id="patient_Last_name">Last Name:</label><br>
-        <input type="text" id="patient_Last_name" name="patient_Last_name"><br>
-        <label type="text" id="patient_Address">Street Address:</label><br>
-        <input type="text" id="patient_Address" name="patient_Address"><br>
-        <button id="submit-patient" type="submit">Submit</button>
-    </form>
-    
-    
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Sign-Up</title>
+</head>
+
+<body>
+
+  <h1>Patient Sign Up</h1>
+
+  <form class="patient-form" id="patient-form">
+    <label>First Name:</label><br>
+    <input type="text" id="patient_First_name" name="patient_First_name"><br>
+    <label>Last Name:</label><br>
+    <input type="text" id="patient_Last_name" name="patient_Last_name"><br>
+    <label>Street Address:</label><br>
+    <input type="text" id="patient_Address" name="patient_Address"><br>
+    <label>Contact Email:</label><br>
+    <input type="text" id="patient-email"><br>
+    <label>Any Medical Needs:</label><br>
+    <input type="text" id="patient-medical-needs"><br>
+    <label>Do you have insurance?</label><br>
+    <select name="insurance" id="insurance">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+    <h2>Select which days you need a provider</h2>
+    <label>Monday</label>
+    <select name="monday" id="monday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br>
+    <label>Tuesday</label>
+    <select name="tuesday" id="tuesday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br>
+    <label>Wednesday</label>
+    <select name="wednesday" id="wednesday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br>
+    <label>Thursday</label>
+    <select name="thursday" id="thursday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br>
+    <label>Friday</label>
+    <select name="friday" id="friday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br>
+    <label>Saturday</label>
+    <select name="saturday" id="saturday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br>
+    <label>Sunday</label>
+    <select name="sunday" id="sunday">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select><br><br>
+    <button id="submit-patient" type="submit">Submit</button>
+  </form>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/patient-signup.js"></script>
 </body>
+
 </html>
-
-<!-- <script src="javascript.js">cd 
-   window.addEventListener( "load", function () {
-  function sendData() {
-    const XHR = new XMLHttpRequest();
-
-    // Bind the FormData object and the form element
-    const FD = new FormData( form );
-
-    // Define what happens on successful data submission
-    XHR.addEventListener( "load", function(event) {
-      alert( event.target.responseText );
-    } );
-
-    // Define what happens in case of error
-    XHR.addEventListener( "error", function( event ) {
-      alert( 'Oops! Something went wrong.' );
-    } );
-
-    // Set up our request
-    XHR.open( "POST", "https://example.com/cors.php" );
-
-    // The data sent is what the user provided in the form
-    XHR.send( FD );
-  }
-
-  // Access the form element...
-  const form = document.getElementById( "myForm" );
-
-  // ...and take over its submit event.
-  form.addEventListener( "submit", function ( event ) {
-    event.preventDefault();
-
-    sendData();
-  } );
-} ); 
-</script> -->
-
-
-
-

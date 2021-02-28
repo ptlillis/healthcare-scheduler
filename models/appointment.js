@@ -1,29 +1,12 @@
 const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
     const Appointment = sequelize.define('appointment', {
-      
       appointment_id:{
         type: Sequelize.INTEGER,
         unique: true,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
-      },
-
-      appointment_start: {
-          type: Sequelize.INTEGER(11),
-          allowNull: false,
-      },
-      appointment_end: {
-          type: Sequelize.INTEGER(11),
-          allowNull: false,
-          validate: {
-            isDate: true
-            }
-      },
-      appointment_session: {
-          type: Sequelize.INTEGER(11),
-          allowNull: false,
       },
       provider_id: {
           type: Sequelize.INTEGER(11),
@@ -37,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
           onUpdate: 'cascade',
           unique: 'unique-patient-per-provider'
       },
-      
       patient_id: {
         type: Sequelize.INTEGER(11),
         allowNull: false,
@@ -50,16 +32,40 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'cascade',
         onUpdate: 'cascade',
         unique: 'unique-patient-per-provider'
+    },
+    monday:{
+      type:sequelize.BOOLEAN,
+      default :false
+    },
+    tuesday:{
+      type:sequelize.BOOLEAN,
+      default :false
+    },
+    wednsday:{
+      type:sequelize.BOOLEAN,
+      default :false
+    },
+    thursday:{
+      type:sequelize.BOOLEAN,
+      default :false
+    },
+    friday:{
+      type:sequelize.BOOLEAN,
+      default :false
+    },
+    saturday:{
+      type:sequelize.BOOLEAN,
+     default :false
+    },
+    sunday:{
+      type:sequelize.BOOLEAN,
+      default :false
     }
     }
      );
-    
         Appointment.associate = (models) => {
         Appointment.belongsTo(models.patient, { foreignKey: 'patient_id', targetKey: 'patient_id', as: 'patient' });
-
         Appointment.belongsTo(models.provider, { foreignKey: 'provider_id', targetKey: 'provider_id', as: 'provider' });
       }
-    
     return Appointment;
   };
-  

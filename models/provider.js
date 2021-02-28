@@ -33,32 +33,39 @@ module.exports = (sequelize, DataTypes) => {
             is: /^[a-z]+$/i 
         }},
         monday:{
-          type:sequelize.BOOLEAN,
-          default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         },
         tuesday:{
-          type:sequelize.BOOLEAN,
-          default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         },
         wednsday:{
-          type:sequelize.BOOLEAN,
-          default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         },
         thursday:{
-          type:sequelize.BOOLEAN,
-          default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         },
         friday:{
-          type:sequelize.BOOLEAN,
-          default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         },
         saturday:{
-          type:sequelize.BOOLEAN,
-         default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         },
         sunday:{
-          type:sequelize.BOOLEAN,
-          default :false
+          type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
         }
 })
     Provider.associate = (models) => {

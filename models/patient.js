@@ -38,40 +38,48 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
     medical_needs:{
-      type:sequelize.STRING,
+      type:Sequelize.STRING,
       allowNull: true,
     },
     insurance_Type:{
-      type:sequelize.BOOLEAN,
+      type: Sequelize.BOOLEAN,
       allowNull: false,
+      defaultValue: false,
     },
     monday:{
-      type:sequelize.BOOLEAN,
-      default :false
+      type: Sequelize.BOOLEAN, 
+      allowNull: false, 
+      defaultValue: false
     },
     tuesday:{
-      type:sequelize.BOOLEAN,
-      default :false
+      type: Sequelize.BOOLEAN, 
+          allowNull: false, 
+          defaultValue: false
     },
-    wednsday:{
-      type:sequelize.BOOLEAN,
-      default :false
+    wednesday:{
+      type: Sequelize.BOOLEAN, 
+      allowNull: false, 
+      defaultValue: false
     },
     thursday:{
-      type:sequelize.BOOLEAN,
-      default :false
+      type: Sequelize.BOOLEAN, 
+      allowNull: false, 
+      defaultValue: false
     },
     friday:{
-      type:sequelize.BOOLEAN,
-      default :false
+      type: Sequelize.BOOLEAN, 
+      allowNull: false, 
+      defaultValue: false
     },
     saturday:{
-      type:sequelize.BOOLEAN,
-     default :false
+      type: Sequelize.BOOLEAN, 
+      allowNull: false, 
+      defaultValue: false
     },
     sunday:{
-      type:sequelize.BOOLEAN,
-      default :false
+      type: Sequelize.BOOLEAN, 
+      allowNull: false, 
+      defaultValue: false
     }
   });
   Patient.associate = (models) => {

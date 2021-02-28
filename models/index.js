@@ -29,6 +29,7 @@ fs.readdirSync(__dirname)
     // const model = sequelize.import(path.join(__dirname, file));
     
     const model = require(path.join(__dirname, file))(sequelize, sequelize.DataTypes)
+    // const model = require(path.join(__dirname, file), (sequelize, sequelize.DataTypes))
     db[model.name] = model;
     console.log(db,'_______-----------');
   });

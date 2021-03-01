@@ -13,8 +13,8 @@ module.exports = (app) => {
     // In this case, db.Patient and db.Provider
         db.Appointment.findAll({
       where: query,
-      include: [db.User], 
-    }).then((dbAppointment) => res.json(dAppointment));
+      include: [db.patient], 
+    }).then((dbAppointment) => res.json(dbAppointment));
   });
 
   // Get route for retrieving a single appointment...?
@@ -26,7 +26,7 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-      include: [db.User],
+      include: [db.patient],
     }).then((dbAppointment) => res.json(dbAppointment));
   });
 

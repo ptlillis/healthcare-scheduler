@@ -63,8 +63,8 @@ $(document).ready(() => {
   
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function signUpPatient(firstName, lastName, address, email, medicalNeeds, insurance, monday, tuesday, wednesday ) {
-console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesday, wednesday);
+    function signUpPatient(firstName, lastName, address, email, medicalNeeds, insurance, monday, tuesday, wednesday,thursday,friday,saturday,sunday ) {
+console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesday, wednesday,thursday,friday,saturday,sunday);
     // Confused which api post should be
       $.post("/api/patient", {
         patient_First_name: firstName,

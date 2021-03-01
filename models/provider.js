@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
           validate: {
             is: /^[a-z]+$/i 
         }},
-        contact_email: {
+        email: {
         type: Sequelize.STRING,
           allowNull: true,
         validate: {

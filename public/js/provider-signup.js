@@ -20,7 +20,7 @@ $(document).ready(() => {
       const providerData = {
         provider_First_name: providerFirstName.val().trim(),
         provider_last_name: providerLastName.val().trim(),
-        contact_email: providerEmail.val().trim(),
+        email: providerEmail.val().trim(),
         license: providerLicense.val().trim(),
         monday: monday.val(),
         tuesday: tuesday.val(),
@@ -37,7 +37,7 @@ $(document).ready(() => {
       if (!providerData.provider_First_name || !providerData.provider_last_name) {
         return;
       }
-      signUpProvider(providerData.provider_First_name, providerData.provider_last_name, providerData.contact_email, providerData.license, providerData.monday, providerData.tuesday, providerData.wednesday, providerData.thursday, providerData.friday, providerData.saturday, providerData.sunday);
+      signUpProvider(providerData.provider_First_name, providerData.provider_last_name, providerData.email, providerData.license, providerData.monday, providerData.tuesday, providerData.wednesday, providerData.thursday, providerData.friday, providerData.saturday, providerData.sunday);
       providerFirstName.val("");
       providerLastName.val("");
       providerEmail.val("");
@@ -59,7 +59,7 @@ $(document).ready(() => {
       $.post("/api/provider", {
         provider_First_name: firstName,
         provider_last_name: lastName,
-        contact_email: email,
+        email: email,
         license: license,
         monday: monday,
         tuesday: tuesday,

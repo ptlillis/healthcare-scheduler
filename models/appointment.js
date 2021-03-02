@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false, 
       defaultValue: false
     },
-    wednsday:{
+    wednesday:{
       type: Sequelize.BOOLEAN, 
       allowNull: false, 
       defaultValue: false

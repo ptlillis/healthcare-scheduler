@@ -35,8 +35,17 @@ module.exports = (app) => {
   // POST route for saving a new patient
   app.post('/api/patient', (req, res) => {
     console.log('======================',req.body);
-    db.Patient.create(req.body).then((dbPatient) => res.json(dbPatient));
-
+    db.Patient.create(req.body).then((dbPatient) => {
+    console.log(dbPatient.dataValues);
+    //get providers 
+    db.Provider.findAll({
+      where: {
+        monday: dbPatient.dataValues.monday
+      }
+    }
+    ).then((dbProvider) => console.log(dbProvider))
+    res.json(dbPatient)});
+    //return
   });
 
   // DELETE route for deleting patients

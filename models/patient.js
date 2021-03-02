@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  const Patient = sequelize.define('patient', {
+  const Patient = sequelize.define('Patient', {
       patient_id:{
         type: Sequelize.INTEGER,
         unique: true,
@@ -32,10 +32,10 @@ module.exports = (sequelize, DataTypes) => {
     validate: {
       isEmail:true
       },
-    unique: {
-     args: true,
-     msg: 'Email address already in use!'
-        }
+    // unique: {
+    //  args: true,
+    //  msg: 'Email address already in use!'
+    //     }
       },
     medical_needs:{
       type:Sequelize.STRING,
@@ -83,7 +83,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   Patient.associate = (models) => {
-    Patient.belongsToMany(models.provider, { as: 'ProviderInPatient', through: models.appointment, foreignKey: 'patient_id'});
+    Patient.belongsToMany(models.Provider, { as: 'ProviderInPatient', through: models.Appointment, foreignKey: 'patient_id'});
   }
   return Patient;
 };

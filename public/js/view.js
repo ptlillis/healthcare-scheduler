@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   const todoContainer = document.querySelector('.todo-container');
   const todoForm = document.getElementById('todo-form');
 
-  // Inital todos array
+//   // Inital todos array
   let todos = [];
 
   // Helper function to hide items
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     el.style.display = 'inline';
   };
 
-  // This function resets the todos displayed with new todos from the database
+//   // This function resets the todos displayed with new todos from the database
   const initializeRows = () => {
     todoContainer.innerHTML = '';
     const rowsToAdd = [];
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   // Helper function to grab todos
   const getTodos = () => {
-    fetch('/api/todos', {
+    fetch('/api/appointment', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   getTodos();
 
-  // Helper function to delete a todo
+//   // Helper function to delete a todo
   const deleteTodo = (e) => {
     e.stopPropagation();
     const { id } = e.target.dataset;
 
-    fetch(`/api/todos/${id}`, {
+    fetch(`/api/appointment/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }).then(getTodos);
   };
 
-  // Function to handle the editing of a todo when input is clicked
+//   // Function to handle the editing of a todo when input is clicked
   const editTodo = (e) => {
     const itemChildren = e.target.children;
     // console.log('editTodo -> itemChildren', itemChildren);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
   };
 
-  // Function to handle when a user cancels editing
+//   // Function to handle when a user cancels editing
   const cancelEdit = (e) => {
     const itemParent = e.target.parentElement;
     if (itemParent) {
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
   };
 
-  // Update a todo (PUT)
+//   // Update a todo (PUT)
   const updateTodo = (todo) => {
-    console.log('attempting to update with', todo);
-    fetch('/api/todos', {
+    console.log('attempting to update with', appointment);
+    fetch('/api/appointment', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }).then((response) => console.log(response));
   };
 
-  // Function to call when we are finished editing a todo
+//   // Function to call when we are finished editing a todo
   const finishEdit = (e) => {
     if (e.keyCode === 13) {
       const itemParent = e.target.parentElement;
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         id: e.target.dataset.id,
       };
 
-      // Update the text in the dom
+//       // Update the text in the dom
       itemParent.childNodes[0].innerText = updatedTodo.text;
 
       // Call on our helper function to preform a PUT request
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
       complete: false,
     };
     if (todo.text) {
-      fetch('/api/todos', {
+      fetch('/api/appointment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

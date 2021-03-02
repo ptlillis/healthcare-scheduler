@@ -15,7 +15,7 @@ module.exports = (app) => {
     // In this case, just db.User
     db.patient.findAll({
       where: query,
-      include: [db.provider],
+      include: [db.Provider],
     }).then((dbPatient) => res.json(dbPatient));
   });
 
@@ -28,20 +28,20 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-      include: [db.provider],
+      include: [db.Provider],
     }).then((dbPatient) => res.json(dbPatient));
   });
 
   // POST route for saving a new patient
   app.post('/api/patient', (req, res) => {
     console.log('======================',req.body);
-    db.patient.create(req.body).then((dbPatient) => res.json(dbPatient));
+    db.Patient.create(req.body).then((dbPatient) => res.json(dbPatient));
 
   });
 
   // DELETE route for deleting patients
   app.delete('/api/patient/:id', (req, res) => {
-    db.patient.destroy({
+    db.Patient.destroy({
       where: {
         id: req.params.id,
       },
@@ -50,7 +50,7 @@ module.exports = (app) => {
 
   // PUT route for updating patients
   app.put('/api/patient', (req, res) => {
-    db.patient.update(req.body, {
+    db.Patient.update(req.body, {
       where: {
         id: req.body.id,
       },

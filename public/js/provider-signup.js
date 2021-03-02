@@ -70,8 +70,10 @@ $(document).ready(() => {
         sunday: sunday,
 
       })
+      // createAppointment()
+      
       .done(function() {
-        window.location.replace("/members");
+        window.location.replace("/appointment");
         alert( "second success" );
       })
       .fail(function(err) {

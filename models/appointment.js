@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-    const Appointment = sequelize.define('appointment', {
+    const Appointment = sequelize.define('Appointment', {
       appointment_id:{
         type: Sequelize.INTEGER,
         unique: true,
@@ -71,8 +71,8 @@ module.exports = (sequelize, DataTypes) => {
     }
      );
         Appointment.associate = (models) => {
-        Appointment.belongsTo(models.patient, { foreignKey: 'patient_id', targetKey: 'patient_id', as: 'patient' });
-        Appointment.belongsTo(models.provider, { foreignKey: 'provider_id', targetKey: 'provider_id', as: 'provider' });
+        Appointment.belongsTo(models.Patient, { foreignKey: 'patient_id', targetKey: 'patient_id', as: 'patient' });
+        Appointment.belongsTo(models.Provider, { foreignKey: 'provider_id', targetKey: 'provider_id', as: 'provider' });
       }
     return Appointment;
   };

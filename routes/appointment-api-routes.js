@@ -13,7 +13,7 @@ module.exports = (app) => {
     // In this case, db.Patient and db.Provider
         db.Appointment.findAll({
       where: query,
-      include: [db.patient], 
+      include:[db.Patient, db.Provider]
     }).then((dbAppointment) => res.json(dbAppointment));
   });
 
@@ -26,7 +26,7 @@ module.exports = (app) => {
       where: {
         id: req.params.id,
       },
-      include: [db.patient],
+      include:[db.Patient, db.Provider]
     }).then((dbAppointment) => res.json(dbAppointment));
   });
 

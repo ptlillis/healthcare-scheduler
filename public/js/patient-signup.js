@@ -1,4 +1,7 @@
 console.log("am i linked");
+// const function createAppointment {
+
+// }
 $(document).ready(() => {
     // Getting references to our form and input
     const patientForm = $("form.patient-form");
@@ -82,8 +85,9 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
         sunday: sunday,
 
       })
+      // createAppointment()
       .done(function() {
-        window.location.replace("/members");
+        window.location.replace("/appointment");
         alert( "second success" );
       })
       .fail(function(err) {
@@ -92,10 +96,10 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
       })
     }
   
-    function handleLoginErr(err) {
-      $("#alert .msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
-    }
+    // function handleLoginErr(err) {
+    //   $("#alert .msg").text(err.responseJSON);
+    //   $("#alert").fadeIn(500);
+    // }
   });
   
   

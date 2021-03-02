@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-    const Provider = sequelize.define('provider', {
+    const Provider = sequelize.define('Provider', {
       provider_id:{
         type: Sequelize.INTEGER,
         unique: true,
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false, 
           defaultValue: false
         },
-        wednsday:{
+        wednesday:{
           type: Sequelize.BOOLEAN, 
           allowNull: false, 
           defaultValue: false
@@ -69,7 +69,7 @@ module.exports = (sequelize, DataTypes) => {
         }
 })
     Provider.associate = (models) => {
-      Provider.belongsToMany(models.patient, { as: 'ProviderInPatient', through: models.appointment, foreignKey: 'provider_id'});
+      Provider.belongsToMany(models.Patient, { as: 'ProviderInPatient', through: models.Appointment, foreignKey: 'provider_id'});
     }
     return Provider;
   };

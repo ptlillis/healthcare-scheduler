@@ -6,29 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patient Sign-Up</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans">
+  <style>
+    
+    body{
+      padding: 0;
+      margin: 0;
+      background: url('./css/assets/care-point-background.jpg');
+      background-size: cover no-repeat;
+      text-align: center;
+      font-family: "Caveat", sans-serif;  
+}
+    h1 {
+      text-align: center;
+      font-family:"Caveat", sans-serif
+          }
+    h3 {
+      text-align: center;
+      font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+    }
+    p {text-align: center;}
+    div {text-align: center;}
+    form {text-align: center;}
+    label {
+      text-align: center;
+      font-family: "Open Sans";
+    }
+    input {text-align: center;}
+    select {text-align: center;}
+    button {text-align: center;}
+  </style>
 </head>
 
 <body>
 
-  <h1>Patient Sign Up</h1>
+  <h1>Sign Up a New Patient</h1>
+  <h3>Complete the form below to schedule your weekly appointments with a CarePoint licensed in-home healthcare provider.</h3>
+  <h3>All appointments will occur at the patient's home address from the hours of 8 AM until 7 PM.</h3>
+  <h3>By submitting your information, you are confirming your availability on these days. If you must change your appointment, please use the cancel button on the next page, and re-submit.</h3>
 
   <form class="patient-form" id="patient-form">
-    <label>First Name:</label><br>
+    <label>Patient First Name:</label><br>
     <input type="text" id="patient_First_name" name="patient_First_name"><br>
-    <label>Last Name:</label><br>
+    <label>Patient Last Name:</label><br>
     <input type="text" id="patient_Last_name" name="patient_Last_name"><br>
-    <label>Street Address:</label><br>
+    <label>Patient Street Address, City, State, Zip:</label><br>
     <input type="text" id="patient_Address" name="patient_Address"><br>
-    <label>Contact Email:</label><br>
+    <label>Patient Contact Email:</label><br>
     <input type="text" id="patient-email"><br>
-    <label>Any Medical Needs:</label><br>
+    <label>Patient Medical Needs:</label><br>
     <input type="text" id="patient-medical-needs"><br>
-    <label>Do you have insurance?</label><br>
+    <label>Does the Patient have Insurance?</label><br>
     <select name="insurance" id="insurance">
       <option value="true">Yes</option>
       <option value="false">No</option>
     </select>
-    <h2>Select which days you need a provider</h2>
+    <h2>What Days Will You Need In-Home Healthcare?</h2>
     <label>Monday</label>
     <select name="monday" id="monday">
       <option value="false">No</option>
@@ -64,7 +98,7 @@
       <option value="false">No</option>
       <option value="true">Yes</option>
     </select><br><br>
-    <button id="submit-patient" type="submit">Submit</button>
+    <button id="submit-patient" type="submit">Make Appointment</button>
   </form>
 
 

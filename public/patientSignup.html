@@ -5,30 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patient Sign-Up</title>
+  <title>Provider Sign-Up</title>
 </head>
 
 <body>
 
-  <h1>Patient Sign Up</h1>
+  <h1>Provider Sign Up</h1>
 
-  <form class="patient-form" id="patient-form">
+  <form class="provider-form">
     <label>First Name:</label><br>
-    <input type="text" id="patient_First_name" name="patient_First_name"><br>
+    <input type="text" id="provider_First_name"><br>
     <label>Last Name:</label><br>
-    <input type="text" id="patient_Last_name" name="patient_Last_name"><br>
-    <label>Street Address:</label><br>
-    <input type="text" id="patient_Address" name="patient_Address"><br>
+    <input type="text" id="provider_Last_name"><br>
     <label>Contact Email:</label><br>
-    <input type="text" id="patient-email"><br>
-    <label>Any Medical Needs:</label><br>
-    <input type="text" id="patient-medical-needs"><br>
-    <label>Do you have insurance?</label><br>
-    <select name="insurance" id="insurance">
-      <option value="true">Yes</option>
-      <option value="false">No</option>
-    </select>
-    <h2>Select which days you need a provider</h2>
+    <input type="text" id="contact-email"><br>
+    <label>License Type</label><br>
+    <input type="text" id="license"><br>
+    <h2>Select which days you are available</h2>
     <label>Monday</label>
     <select name="monday" id="monday">
       <option value="false">No</option>
@@ -64,12 +57,13 @@
       <option value="false">No</option>
       <option value="true">Yes</option>
     </select><br><br>
-    <button id="submit-patient" type="submit">Submit</button>
+
+
+    <button type="submit">Submit</button>
   </form>
 
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/patient-signup.js"></script>
+  <script type="text/javascript" src="js/provider-signup.js"></script>
 </body>
 
 </html>

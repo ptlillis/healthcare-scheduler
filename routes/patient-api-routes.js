@@ -36,33 +36,54 @@ module.exports = (app) => {
   app.post('/api/patient', (req, res) => {
     console.log('======================',req.body);
     db.Patient.create(req.body).then((dbPatient) => {
-    console.log(dbPatient.dataValues);
+    console.log(dbPatient.dataValues.patient_id);
     //get providers 
     db.Provider.findAll({
       where: {
-        monday: dbPatient.dataValues.monday
+        monday: dbPatient.dataValues.monday,
+        tuesday: dbPatient.dataValues.tuesday,
+        wednesday: dbPatient.dataValues.wednesday,
+        thursday: dbPatient.dataValues.thursday,
+        friday: dbPatient.dataValues.friday,
+        saturday: dbPatient.dataValues.saturday,
+        sunday: dbPatient.dataValues.sunday,
       }
     }
-    ).then((dbProvider) => console.log(dbProvider))
-    res.json(dbPatient)});
+    ).then((dbProvider) => {
+    console.log(dbProvider[0].dataValues.provider_id)
+     res.json(dbPatient)
+    const newAppointment = 
+    {
+      patient_id: dbPatient.dataValues.patient_id,
+      provider_id: dbProvider[0].dataValues.provider_id,
+      monday: dbPatient.dataValues.monday,
+      tuesday: dbPatient.dataValues.tuesday,
+      wednesday: dbPatient.dataValues.wednesday,
+      thursday: dbPatient.dataValues.thursday,
+      friday: dbPatient.dataValues.friday,
+      saturday: dbPatient.dataValues.saturday,
+      sunday: dbPatient.dataValues.sunday,
+     
+
+    }
     //return
-  });
-
-  // DELETE route for deleting patients
-  app.delete('/api/patient/:id', (req, res) => {
-    db.Patient.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then((dbPatient) => res.json(dbPatient));
-  });
-
-  // PUT route for updating patients
-  app.put('/api/patient', (req, res) => {
-    db.Patient.update(req.body, {
-      where: {
-        id: req.body.id,
-      },
-    }).then((dbPatient) => res.json(dbPatient));
-  });
-};
+    db.Appointment.create(newAppointment).then((dbAppointment) => {
+      console.log(dbAppointment.dataValues.appointment_id);
+    })})
+  })})
+    app.delete('/api/patient/:id', (req, res) => {
+      db.Patient.destroy({
+        where: {
+          id: req.params.id,
+        },
+      }).then((dbPatient) => res.json(dbPatient));
+    });
+    // PUT route for updating patients
+    app.put('/api/patient', (req, res) => {
+      db.Patient.update(req.body, {
+        where: {
+          id: req.body.id,
+        },
+      }).then((dbPatient) => res.json(dbPatient));
+    });
+  };

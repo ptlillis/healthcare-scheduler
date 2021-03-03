@@ -33,6 +33,61 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'cascade',
         unique: 'unique-patient-per-provider'
     },
+    patient_First_name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-z]+$/i, 
+     }
+     },
+     patient_Last_name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-z]+$/i, 
+    }
+    },
+    
+  patient_Address:{
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  
+  medical_needs:{
+    type:Sequelize.STRING,
+    allowNull: true,
+  },
+  insurance_Type:{
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
+  provider_First_name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      is: /^[a-z]+$/i, 
+  }},
+  
+  provider_last_name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      is: /^[a-z]+$/i, 
+  }
+},
+email: {
+  type: Sequelize.STRING,
+    allowNull: true,
+  validate: {
+    isEmail:true
+    }},
+  license:{
+    type: Sequelize.STRING,
+    allowNull: true,
+    validate: {
+      is: /^[a-z]+$/i 
+  }},
     monday:{
       type: Sequelize.BOOLEAN, 
       allowNull: false, 

@@ -50,12 +50,24 @@ module.exports = (app) => {
       }
     }
     ).then((dbProvider) => {
-    console.log(dbProvider[0].dataValues.provider_id)
+    console.log(dbProvider[0].dataValues.provider_id,
+      dbProvider[0].dataValues.provider_First_name,
+      dbProvider[0].dataValues.provider_last_name,
+      dbProvider[0].dataValues.license)
      res.json(dbPatient)
     const newAppointment = 
     {
       patient_id: dbPatient.dataValues.patient_id,
+      patient_First_name: dbPatient.dataValues.patient_First_name,
+      patient_Last_name: dbPatient.dataValues.patient_Last_name,
+      patient_Address: dbPatient.dataValues.patient_Address,
+      medical_needs: dbPatient.dataValues.medical_needs,
+      insurance_Type: dbPatient.dataValues.insurance_Type,
       provider_id: dbProvider[0].dataValues.provider_id,
+      provider_First_name: dbProvider[0].dataValues.provider_First_name,
+      provider_last_name: dbProvider[0].dataValues.provider_last_name,
+      email: dbProvider[0].dataValues.email,
+      license: dbProvider[0].dataValues.license,
       monday: dbPatient.dataValues.monday,
       tuesday: dbPatient.dataValues.tuesday,
       wednesday: dbPatient.dataValues.wednesday,

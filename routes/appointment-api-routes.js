@@ -1,33 +1,37 @@
 // Requiring our models
 const db = require('../models');
-
+console.log("tesssstttttt");
 // Routes
 module.exports = (app) => {
-  app.get('/api/appointment', (req, res) => {
-    const query = {};
-    if (req.query.appointment_id) {
-      query.AppointmentId = req.query.appointment_id;
-    }
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, db.Patient and db.Provider
-        db.Appointment.findAll({
-      where: query,
-      include:[db.Patient, db.Provider]
-    }).then((dbAppointment) => res.json(dbAppointment));
-  });
+  // // app.get('/api/appointment', (req, res) => {
+  //   const query = {};
+  //   if (req.query.appointment_id) {
+  //     query.AppointmentId = req.query.appointment_id;
+  //   }
+  //   // Here we add an "include" property to our options in our findAll query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, db.Patient and db.Provider
+  //       db.Appointment.findAll({
+  //     where: query,
+  
+  //   }).then((dbAppointment) => res.json(dbAppointment));
+  // });
 
   // Get route for retrieving a single appointment...?
   app.get('/api/appointment/:id', (req, res) => {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
-    
+    const query = {};
+    if (req.query.appointment_id) {
+      query.AppointmentId = req.query.appointment_id;
+    }
     db.Appointment.findOne({
       where: {
         id: req.params.id,
       },
-      include:[db.Patient, db.Provider]
+      
     }).then((dbAppointment) => res.json(dbAppointment));
+    console.log("----------",dbAppointment );
   });
 
   // POST route for saving a new appointment

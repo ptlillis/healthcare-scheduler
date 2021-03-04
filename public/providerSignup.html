@@ -5,61 +5,131 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Provider Sign-Up</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans">
+  <style>
+    
+    body{
+      padding: 0;
+      margin: 0;
+      background: url('./css/assets/care-point-background.jpg');
+      background-size: cover no-repeat;
+      text-align: center;
+      font-family: "Caveat", sans-serif;  
+}
+    h1 {
+      text-align: center;
+      font-family:"Caveat", sans-serif
+          }
+    h3 {
+      text-align: center;
+      font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+    }
+    p {text-align: center;}
+    div {text-align: center;}
+    form {text-align: center;}
+    label {
+      text-align: center;
+      font-family: "Open Sans";
+    }
+    input {text-align: center;}
+    select {text-align: center;}
+    button {text-align: center;}
+    .center {
+ margin-left: auto;
+ margin-right: auto;
+}
+  </style>
+  <title>Sign Up a New Healthcare Provider</title>
 </head>
 
 <body>
 
-  <h1>Provider Sign Up</h1>
+  <h1>Sign Up a New In-Home Healthcare Provider</h1>
+  <h3>Complete the form below to submit your hours available to work as an in-home healthcare provider.</h3>
+  <h3>All appointments will occur at the patient's home address from the hours of 8 AM until 7 PM.</h3>
+  <h3>By submitting your information, you are confirming your availability on these days.</h3>
+  <h3>All CarePoint in-home healthcare providers must be licensed by their state board to practice. Please be prepared to provide license documentation.</h3>
 
   <form class="provider-form">
-    <label>First Name:</label><br>
+    <label>Provider First Name:</label><br>
     <input type="text" id="provider_First_name"><br>
-    <label>Last Name:</label><br>
+    <label>Provider Last Name:</label><br>
     <input type="text" id="provider_Last_name"><br>
-    <label>Contact Email:</label><br>
+    <label>Provider Contact Email:</label><br>
     <input type="text" id="contact-email"><br>
-    <label>License Type</label><br>
+    <label>Provider License Type</label><br>
     <input type="text" id="license"><br>
-    <h2>Select which days you are available</h2>
-    <label>Monday</label>
-    <select name="monday" id="monday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Tuesday</label>
-    <select name="tuesday" id="tuesday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Wednesday</label>
-    <select name="wednesday" id="wednesday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Thursday</label>
-    <select name="thursday" id="thursday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Friday</label>
-    <select name="friday" id="friday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Saturday</label>
-    <select name="saturday" id="saturday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Sunday</label>
-    <select name="sunday" id="sunday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br><br>
+    <h2>What Days Are You Available to Provide In-Home Care?</h2>
+    <table id="providerSchedTable" class="center">
+      <thead>
+        <tr>
+          <th> </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><label>Monday</label><br></td>
+          <td><select name="monday" id="monday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Tuesday</label><br></td>
+          <td> <select name="tuesday" id="tuesday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Wednesday</label><br></td>
+          <td> <select name="wednesday" id="wednesday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Thursday</label><br></td>
+          <td><select name="thursday" id="thursday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Friday</label><br></td>
+          <td> <select name="friday" id="friday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Saturday</label><br></td>
+          <td> <select name="saturday" id="saturday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Sunday</label><br></td>
+          <td> <select name="sunday" id="sunday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table><br><br>
 
 
-    <button type="submit">Submit</button>
+    <button type="submit">Submit Provider Availability</button>
   </form>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -32,7 +32,11 @@ module.exports = (app) => {
       },
       
     }).then((dbAppointment)=> res.json(dbAppointment));
+
     console.log("----------","dbAppointment" );
+
+    console.log("----------",dbAppointment );
+
   });
 
   // POST route for saving a new appointment

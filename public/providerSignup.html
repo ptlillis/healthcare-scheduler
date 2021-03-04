@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans">
   <style>
     
@@ -35,6 +36,10 @@
     input {text-align: center;}
     select {text-align: center;}
     button {text-align: center;}
+    a {font-family: "Open-Sans", sans-serif;}
+    option {font-family: "Open-Sans", sans-serif;}
+    td {font-family: "Open-Sans", sans-serif;}
+    #branding {font-family: "Caveat", sans-serif;}
     .center {
  margin-left: auto;
  margin-right: auto;
@@ -44,6 +49,23 @@
 </head>
 
 <body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="branding">
+          CarePoint: Healthcare Scheduler
+        </a>
+        <a class="navbar-brand" href="/">
+          Home
+        </a>
+        <a class="navbar-brand" href="/logout">
+          Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+  
 
   <h1>Sign Up a New In-Home Healthcare Provider</h1>
   <h3>Complete the form below to submit your hours available to work as an in-home healthcare provider.</h3>

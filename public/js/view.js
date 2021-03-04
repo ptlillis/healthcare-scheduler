@@ -53,36 +53,65 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 // BCS code correction
 // const getAppoinment = (e) => {
+
+//   // e.stopPropagation();
+//   // const { id } = e.target.dataset;
+
 //   e.stopPropagation();
 //   const { id } = e.target.dataset;
+
 //   fetch(`/api/appointment/${id}`, {
 //     method: 'GET',
 //     headers: {
 //       'Content-Type': 'application/json',
 //     },
+
+//   }).then((dbAppointment)=> {
+//     console.log("----------",dbAppointment );
+//    })
+ 
+//  };
+
+  // then((dbAppointment) => res.json(dbAppointment))
+//   console.log(appointment,"-----------")
+
 //   }).then(() => res.json(dbAppointment))
 //      console.log(appointment,"-----------")
+
      
 // };
 // getAppoinment();
 let appointmentData = {};
   const getAppointmentInfo = () => {
+
+    fetch(`/api/Appointment/:id`, {
+
     fetch(`/api/appointment/:id`, {
+
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then((response) => response.json())
+    console.log("=========----")
+      // .then((response) => response.json())
       .then((data) => {
         console.log('Success in getting appointment data:', data);
+
+        AppointmentData = data;
+
         appointmentData = data;
+
         // initializeDisplay();
       });
   };
 
   getAppointmentInfo();
+
+});
+
 })
+
 
 
 // const deleteAppointment = (e) => {

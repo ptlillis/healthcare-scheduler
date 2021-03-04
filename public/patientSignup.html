@@ -16,7 +16,7 @@
       background-size: cover no-repeat;
       text-align: center;
       font-family: "Caveat", sans-serif;  
-}
+  }
     h1 {
       text-align: center;
       font-family:"Caveat", sans-serif
@@ -36,6 +36,14 @@
     input {text-align: center;}
     select {text-align: center;}
     button {text-align: center;}
+    table {text-align: center;}
+    thead {text-align: center;}
+    th {font-family: "Open Sans", sans-serif;}
+
+    .center {
+ margin-left: auto;
+ margin-right: auto;
+}
   </style>
 </head>
 
@@ -62,42 +70,79 @@
       <option value="true">Yes</option>
       <option value="false">No</option>
     </select>
-    <h2>What Days Will You Need In-Home Healthcare?</h2>
-    <label>Monday</label>
-    <select name="monday" id="monday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Tuesday</label>
-    <select name="tuesday" id="tuesday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Wednesday</label>
-    <select name="wednesday" id="wednesday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Thursday</label>
-    <select name="thursday" id="thursday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Friday</label>
-    <select name="friday" id="friday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Saturday</label>
-    <select name="saturday" id="saturday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br>
-    <label>Sunday</label>
-    <select name="sunday" id="sunday">
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select><br><br>
+    <br>
+    <br>
+    <table id="patientSchedTable" class="center">
+      <label>Please Select the Days You Require In-Home Healthcare Service</label>
+      <br>
+      <br>
+      <thead>
+        <tr>
+          <th> </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><label>Monday</label><br></td>
+          <td><select name="monday" id="monday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Tuesday</label><br></td>
+          <td> <select name="tuesday" id="tuesday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Wednesday</label><br></td>
+          <td> <select name="wednesday" id="wednesday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Thursday</label><br></td>
+          <td><select name="thursday" id="thursday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Friday</label><br></td>
+          <td> <select name="friday" id="friday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Saturday</label><br></td>
+          <td> <select name="saturday" id="saturday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Sunday</label><br></td>
+          <td> <select name="sunday" id="sunday">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
     <button id="submit-patient" type="submit">Make Appointment</button>
   </form>
 

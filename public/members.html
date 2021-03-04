@@ -44,6 +44,7 @@
     select {text-align: center;}
     button {text-align: center;}
     a {font-family: "Open-Sans", sans-serif;}
+    #branding {font-family: "Caveat", sans-serif;}
   </style>
 </head>
 
@@ -51,6 +52,12 @@
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
+      <a class="navbar-brand" id="branding">
+        CarePoint: Healthcare Scheduler
+      </a>
+      <a class="navbar-brand" href="/">
+        Home
+      </a>
       <a class="navbar-brand" href="/logout">
         Logout
       </a>
@@ -62,11 +69,14 @@
       <div class="col-md-6 col-md-offset-3">
         <h1>Welcome to CarePoint Healthcare Scheduler <span class="member-name"></span>!</h1>
         <h2>We are here to help secure you weekly appointments for your much needed in-home care.</h2>
-        <h2>Patients in need can provide their information to CarePoint, including days on which you are requesting in-home healthcare, and our service will pair you with a licensed provider! Never wait on a scheduling call again, use CarePoint.</h2>
+        <h2>Patients in need can provide their information to CarePoint, including days on which you are requesting in-home healthcare, and our service will pair you with a licensed provider! Never wait on a scheduling call again: that's the point.</h2>
         <h2>We are also a great tool for licensed in-home healthcare providers to gain new clients. Licensed providers select the correct button below to continue.</h2>
+        <hr>
         <h1>Getting Started:</h1>
         <h3>Select if you are a new patient or provider below. On the next screen you will input your contact information, medical needs and availability.</h3>
+        <br>
         <a href="../patientSignup.html"><button type="button" class="btn btn-primary btn-lg btn-block">Are you a New Patient?</button></a>
+        <br>
         <a href="../providerSignup.html"><button type="button" class="btn btn-primary btn-lg btn-block">Are you a New Provider?</button></a>
       </div>
       <!-- <div class="col-md-6 col-md-offset-3">

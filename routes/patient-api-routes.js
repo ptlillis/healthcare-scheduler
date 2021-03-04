@@ -80,7 +80,7 @@ module.exports = (app) => {
     }
     //return
     db.Appointment.create(newAppointment).then((dbAppointment) => {
-      console.log(dbAppointment.dataValues.appointment_id);
+      console.log(dbAppointment.dataValues);
     })})
   })})
     app.delete('/api/patient/:id', (req, res) => {

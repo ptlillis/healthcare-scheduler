@@ -1,23 +1,150 @@
-/* .todo-list {
-  margin: 0 auto;
-  margin-top: 75px;
+body {
+	padding: 0;
+	margin: 0;
+	/* background: url('./css/assets/care-point-background.jpg');
+      background-size: cover no-repeat; */
+	text-align: center;
+	background-color: #d1f8f8;
 }
 
-input.new-item:focus {
-  outline: none;
+.topnav {
+	color: #4e9696;
+	overflow: hidden;
 }
 
-.list-group-item > button.delete,
-.list-group-item > button.complete {
-  float: right;
-  height: 25px;
-  margin-left: 5px;
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #4e9696;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
 
-.edit {
-  width: 100%;
-} */
+#nav-img {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+}
+
+.stethescope {
+	border-radius: 50%;
+	height: 10%;
+	width: 10%;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Caveat", sans-serif;
+	color: #4e9696;
+}
+
+.card {
+	margin: 0 auto;
+	/* Added */
+	float: none;
+	/* Added */
+	margin-bottom: 10px;
+	/* Added */
+	background-color: #d1f8f8 !important;
+	color: #4e9696;
+}
+
+h3 {
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+}
+
+p {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
+/* img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+
+    } */
+
+form {
+	text-align: center;
+	color: #4e9696;
+}
+
+label {
+	text-align: center;
+	font-family: "Open Sans";
+	color: #4e9696;
+}
+
+input {
+	text-align: center;
+}
+
+select {
+	text-align: center;
+	background-color: #ffc09c;
+	color: white;
+}
+
+button:hover {
+	text-align: center;
+	background-color: #ffc09c;
+	color: white;
+}
+
+button {
+	background-color: #4e9696;
+	color: white;
+	border-radius: 5px;
+}
+
+table {
+	text-align: center;
+}
+
+thead {
+	text-align: center;
+}
+
+th {
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	font-family: "Open-Sans", sans-serif;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+option {
+	font-family: "Open-Sans", sans-serif;
+}
+
+td {
+	font-family: "Open-Sans", sans-serif;
+	padding-right: 10px;
+	padding-bottom: 6px;
+}
+
+#branding {
+	font-family: "Caveat", sans-serif;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 form.signup,
 form.login {
-  margin-top: 50px;
+	margin-top: 50px;
 }

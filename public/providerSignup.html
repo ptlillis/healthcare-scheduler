@@ -8,47 +8,335 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans">
   <style>
-    
-    body{
+    body {
       padding: 0;
       margin: 0;
-      background: url('./css/assets/care-point-background.jpg');
-      background-size: cover no-repeat;
+      /* background: url('./css/assets/care-point-background.jpg');
+      background-size: cover no-repeat; */
       text-align: center;
-      font-family: "Caveat", sans-serif;  
-}
+      background-color: #d1f8f8
+    }
+
+    .topnav {
+      color: #4e9696;
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: #4e9696;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #nav-img {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+
+    .stethescope {
+      border-radius: 50%;
+      height: 10%;
+      width: 10%;
+    }
+
     h1 {
       text-align: center;
-      font-family:"Caveat", sans-serif
-          }
+      font-family: "Caveat", sans-serif;
+      color: #4e9696;
+    }
+
+    .card {
+      margin: 0 auto;
+      /* Added */
+      float: none;
+      /* Added */
+      margin-bottom: 10px;
+      /* Added */
+      background-color: #d1f8f8 !important;
+      color: #4e9696
+    }
+
     h3 {
       text-align: center;
       font-family: "Open Sans", sans-serif;
       font-size: 13px;
     }
-    p {text-align: center;}
-    div {text-align: center;}
-    form {text-align: center;}
+
+    p {
+      text-align: center;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+
+    }
+
+    form {
+      text-align: center;
+      color: #4e9696
+    }
+
     label {
       text-align: center;
       font-family: "Open Sans";
+      color: #4e9696
     }
-    input {text-align: center;}
-    select {text-align: center;}
-    button {text-align: center;}
-    a {font-family: "Open-Sans", sans-serif;}
-    option {font-family: "Open-Sans", sans-serif;}
-    td {font-family: "Open-Sans", sans-serif;}
-    #branding {font-family: "Caveat", sans-serif;}
+
+    input {
+      text-align: center;
+    }
+
+    select {
+      text-align: center;
+      background-color: #ffc09c;
+      color: white;
+    }
+
+    button:hover {
+      text-align: center;
+      background-color: #ffc09c;
+      color: white;
+
+    }
+
+    button {
+      background-color: #4e9696;
+      color: white;
+      border-radius: 5px;
+    }
+
+    table {
+      text-align: center;
+    }
+
+    thead {
+      text-align: center;
+    }
+
+    th {
+      font-family: "Open Sans", sans-serif;
+    }
+
+
+
+    a {
+      font-family: "Open-Sans", sans-serif;
+    }
+
+    a:hover {
+      font-weight: bold;
+    }
+
+    option {
+      font-family: "Open-Sans", sans-serif;
+    }
+
+    td {
+      font-family: "Open-Sans", sans-serif;
+      padding-right: 10px;
+      padding-bottom: 6px;
+    }
+
+    #branding {
+      font-family: "Caveat", sans-serif;
+    }
+
     .center {
- margin-left: auto;
- margin-right: auto;
-}
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
   <title>Sign Up a New Healthcare Provider</title>
 </head>
 
 <body>
+  <div class="topnav">
+    <a class="active" style="font-family: 'Caveat', sans-serif;
+    font-size: 20px;"><img src="../public/css/assets/noun_Heart_3748938.png" id="nav-img" alt="heart icon">CarePoint:
+      Healthcare Scheduler</a>
+    <a href="/">Home</a>
+    <a href="/logout">Log Out</a>
+  </div>
+  <!-- <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="branding">
+          CarePoint: Healthcare Scheduler
+        </a>
+        <a class="navbar-brand" href="/">
+          Home
+        </a>
+        <a class="navbar-brand" href="/logout">
+          Logout
+        </a>
+      </div>
+    </div>
+  </nav> -->
+
+  <h1><img src="../public/css/assets/stethescope.png" class="stethescope" alt="stethescope">&nbsp;Sign Up a New
+    Provider&nbsp;<img src="../public/css/assets/stethescope.png" class="stethescope" alt="stethescope"> </h1>
+
+  <div class="card" style="width: 50%;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Complete the form below to schedule your weekly appointments with a CarePoint licensed
+        in-home healthcare
+        provider.</li>
+      <li class="list-group-item">All appointments will occur at the patient's home address from the hours of 8 AM until
+        7 PM.</li>
+      <li class="list-group-item">By submitting your information, you are confirming your availability on these days. If
+        you must change your
+        appointment, please use the cancel button on the next page, and re-submit.</li>
+    </ul>
+  </div>
+  <!-- <h3>Complete the form below to schedule your weekly appointments with a CarePoint licensed in-home healthcare
+    provider.</h3>
+  <h3>All appointments will occur at the patient's home address from the hours of 8 AM until 7 PM.</h3>
+  <h3>By submitting your information, you are confirming your availability on these days. If you must change your
+    appointment, please use the cancel button on the next page, and re-submit.</h3> -->
+
+  <form class="patient-form" id="patient-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 about-patient ">
+              <table id="patientInfo" class="center">
+                <label style="font-weight: bold; font-size: 17px;   text-decoration-line: underline;
+                text-decoration-style: dotted;"><img src="../public/css/assets/blue-heart.png"
+                    alt="heart icon">&nbsp;Your
+                  Information&nbsp;<img src="../public/css/assets/blue-heart.png" alt="heart icon"></label><br>
+
+                <thead>
+                  <tr>
+                    <th> </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><label>Provider First Name:&nbsp;</label></td>
+                    <td> <input type=" text" id="provider_First_name" name="provider_First_name">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Provider Last Name:</label>
+                    </td>
+                    <td> <input type="text" id="provider_Last_name" name="provider_Last_name">
+                    </td>
+                  </tr>
+                  <td><label>Provider Contact Email:</label>
+                  </td>
+                  <td><input type="text" id="contact-email">
+                  </td>
+                  </tr>
+                  <tr>
+                    <td><label>Provider License Type:</label>
+                    </td>
+                    <td> <input type="text" id="license"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div class="col-lg-6 patient-schedule">
+              <table id="patientSchedTable" class="center">
+                <label style="font-weight: bold; font-size: 17px;   text-decoration-line: underline;
+                text-decoration-style: dotted; "><img src="../public/css/assets/blue-heart.png"
+                    alt="heart icon">&nbsp;What Days Are You Available to Provide In-Home Care?&nbsp;<img
+                    src="../public/css/assets/blue-heart.png" alt="heart icon"></label>
+                <br>
+                <thead>
+                  <tr>
+                    <th> </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><label>Monday</label><br></td>
+                    <td><select name=" monday" id="monday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Tuesday</label><br></td>
+                    <td> <select name="tuesday" id="tuesday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Wednesday</label><br></td>
+                    <td> <select name="wednesday" id="wednesday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Thursday</label><br></td>
+                    <td><select name="thursday" id="thursday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Friday</label><br></td>
+                    <td> <select name="friday" id="friday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Saturday</label><br></td>
+                    <td> <select name="saturday" id="saturday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Sunday</label><br></td>
+                    <td> <select name="sunday" id="sunday">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+            </div>
+          </div>
+          <button type="submit">Submit Provider Availability</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/patient-signup.js"></script>
+</body>
+
+<!-- <body>
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -65,13 +353,14 @@
       </div>
     </div>
   </nav>
-  
+
 
   <h1>Sign Up a New In-Home Healthcare Provider</h1>
   <h3>Complete the form below to submit your hours available to work as an in-home healthcare provider.</h3>
   <h3>All appointments will occur at the patient's home address from the hours of 8 AM until 7 PM.</h3>
   <h3>By submitting your information, you are confirming your availability on these days.</h3>
-  <h3>All CarePoint in-home healthcare providers must be licensed by their state board to practice. Please be prepared to provide license documentation.</h3>
+  <h3>All CarePoint in-home healthcare providers must be licensed by their state board to practice. Please be prepared
+    to provide license documentation.</h3>
 
   <form class="provider-form">
     <label>Provider First Name:</label><br>
@@ -156,6 +445,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/provider-signup.js"></script>
-</body>
+</body> -->
 
 </html>

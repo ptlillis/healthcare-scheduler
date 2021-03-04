@@ -21,39 +21,40 @@ module.exports = (app) => {
   app.get('/api/appointment/:id', (req, res) => {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
+    console.log("--------------------danny");
     const query = {};
     if (req.query.appointment_id) {
-      query.AppointmentId = req.query.appointment_id;
+      query.appointmentId = req.query.appointment_id;
     }
     db.Appointment.findOne({
       where: {
         id: req.params.id,
       },
       
-    }).then((dbAppointment) => res.json(dbAppointment));
-    console.log("----------",dbAppointment );
+    }).then((dbAppointment)=> res.json(dbAppointment));
+    console.log("----------","dbAppointment" );
   });
 
   // POST route for saving a new appointment
-  app.post('/api/appointment', (req, res) => {
-    db.Appointment.create(req.body).then((dbAppointment) => res.json(dbAppointment));
-  });
+  // app.post('/api/appointment', (req, res) => {
+  //   db.Appointment.create(req.body).then((dbAppointment) => res.json(dbAppointment));
+  // });
 
   // DELETE route for deleting appointment
-  app.delete('/api/appointment/:id', (req, res) => {
-    db.Appointment.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then((dbAppointment) => res.json(dbAppointment));
-  });
+  // app.delete('/api/appointment/:id', (req, res) => {
+  //   db.Appointment.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then((dbAppointment) => res.json(dbAppointment));
+  // });
 
   // PUT route for updating appointment
-  app.put('/api/appointment', (req, res) => {
-    db.Appointment.update(req.body, {
-      where: {
-        id: req.body.id,
-      },
-    }).then((dbAppointment) => res.json(dbAppointment));
-  });
+  // app.put('/api/appointment', (req, res) => {
+  //   db.Appointment.update(req.body, {
+  //     where: {
+  //       id: req.body.id,
+  //     },
+  //   }).then((dbAppointment) => res.json(dbAppointment));
+  // });
 };

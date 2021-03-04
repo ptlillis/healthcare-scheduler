@@ -30,7 +30,7 @@ module.exports = (app) => {
         id: req.params.id,
       },
       
-    }).then((dbAppointment) => res.json(dbAppointment));
+    }).then((dbAppointment)=> res.json(dbAppointment));
     console.log("----------",dbAppointment );
   });
 
@@ -40,20 +40,20 @@ module.exports = (app) => {
   });
 
   // DELETE route for deleting appointment
-  app.delete('/api/appointment/:id', (req, res) => {
-    db.Appointment.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then((dbAppointment) => res.json(dbAppointment));
-  });
+  // app.delete('/api/appointment/:id', (req, res) => {
+  //   db.Appointment.destroy({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   }).then((dbAppointment) => res.json(dbAppointment));
+  // });
 
   // PUT route for updating appointment
-  app.put('/api/appointment', (req, res) => {
-    db.Appointment.update(req.body, {
-      where: {
-        id: req.body.id,
-      },
-    }).then((dbAppointment) => res.json(dbAppointment));
-  });
+  // app.put('/api/appointment', (req, res) => {
+  //   db.Appointment.update(req.body, {
+  //     where: {
+  //       id: req.body.id,
+  //     },
+  //   }).then((dbAppointment) => res.json(dbAppointment));
+  // });
 };

@@ -29,7 +29,7 @@ This Application can be used by clonning it, open in command prompt, bash or use
 
 ## LINK TO THE URL
 
-- 
+- The Link To Heroku [healthcare-scheduler](https://afternoon-ridge-29746.herokuapp.com/)
 
 ## SCREENSHOTS
 

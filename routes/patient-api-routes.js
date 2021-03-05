@@ -5,32 +5,50 @@ const db = require('../models');
 
 // Routes
 module.exports = (app) => {
-  app.get('/api/patient', (req, res) => {
-    const query = {};
-    if (req.query.patient_id) {
-      query.UserId = req.query.patient_id;
-    }
+  // app.get('/api/test', (req, res) => {
+  //   const query = {};
+  //   // if (req.query.patient_id) {
+  //   //   query.UserId = req.query.patient_id;
+  //   // }
+  //   // Here we add an "include" property to our options in our findAll query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.User
+  //   db.patient.findAll({
+  //     // where: query,
+  //     // include: [db.Provider],
+  //   }).then((data) => res.json(data));
+  // });
+
+  app.get("/api/test", (req, res) => {
+    // const query = {};
+    // if (req.query.patient_id) {
+    //   query.UserId = req.query.patient_id;
+    // }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.User
-    db.patient.findAll({
-      where: query,
-      include: [db.Provider],
-    }).then((dbPatient) => res.json(dbPatient));
-  });
+    db.Appointment.findAll({
+      
 
-  // Get route for retrieving a single patient
-  app.get('/api/patient/:id', (req, res) => {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.User
-    db.patient.findOne({
-      where: {
-        id: req.params.id,
-      },
-      include: [db.Provider],
-    }).then((dbPatient) => res.json(dbPatient));
+      limit: 1,
+      
+      order: [ [ 'createdAt', 'DESC' ]]
+    }).then((data) => res.json(data)
+    //
+    );
   });
+  // Get route for retrieving a single patient
+  // app.get('/api/patient/:id', (req, res) => {
+  //   // Here we add an "include" property to our options in our findOne query
+  //   // We set the value to an array of the models we want to include in a left outer join
+  //   // In this case, just db.User
+  //   db.patient.findOne({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //     include: [db.Provider],
+  //   }).then((dbPatient) => res.json(dbPatient));
+  // });
 
   // POST route for saving a new patient
   app.post('/api/patient', (req, res) => {
@@ -48,8 +66,8 @@ module.exports = (app) => {
         saturday: dbPatient.dataValues.saturday,
         sunday: dbPatient.dataValues.sunday,
       }
-    }
-    ).then((dbProvider) => {
+    })
+    .then((dbProvider) => {
     console.log(dbProvider[0].dataValues.provider_id,
       dbProvider[0].dataValues.provider_First_name,
       dbProvider[0].dataValues.provider_last_name,
@@ -99,3 +117,4 @@ module.exports = (app) => {
       }).then((dbPatient) => res.json(dbPatient));
     });
   };
+

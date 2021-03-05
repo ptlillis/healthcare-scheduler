@@ -21,6 +21,29 @@ $(document).ready(() => {
 
     
 
+     console.log("am i linked");
+// const function createAppointment {
+
+// }
+$(document).ready(() => {
+    // Getting references to our form and input
+    const patientForm = $("form.patient-form");
+    const patientFirstName = $("input#patient_First_name")
+    const patientLastName = $("input#patient_Last_name")
+    const address = $("input#patient_Address")
+    const patientEmail = $("input#patient-email")
+    const patientNeeds = $("input#patient-medical-needs")
+    const patientInsurance = $("#insurance")
+    const monday = $('#monday')
+    const tuesday = $('#tuesday')
+    const wednesday = $('#wednesday')
+    const thursday = $('#thursday')
+    const friday= $('#friday')
+    const saturday = $('#saturday')
+    const sunday = $('#sunday')
+
+    
+
       patientForm.on("submit", event => {
 
       event.preventDefault();
@@ -46,6 +69,8 @@ $(document).ready(() => {
       if (!patientData.patient_First_name || !patientData.patient_Last_name || !patientData.patient_Address) {
         return;
       }
+     
+      
       signUpPatient(patientData.patient_First_name, patientData.patient_Last_name, patientData.patient_Address, patientData.email, patientData.medical_needs, patientData.insurance_Type, patientData.monday, patientData.tuesday, patientData.wednesday, patientData.thursday, patientData.friday, patientData.saturday, patientData.sunday);
       patientFirstName.val("");
       patientLastName.val("");
@@ -62,8 +87,19 @@ $(document).ready(() => {
       sunday.val(false);
 
       console.log('signUpPatient');
+      
     });
-  
+    function getPatient() {
+      $.get("/api/test", function( data ) {
+        alert("test")
+        console.log(data);
+      });
+    }
+
+
+
+
+
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
     function signUpPatient(firstName, lastName, address, email, medicalNeeds, insurance, monday, tuesday, wednesday,thursday,friday,saturday,sunday ) {
@@ -87,8 +123,9 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
       })
       // createAppointment()
       .done(function() {
-        window.location.replace("/appointment");
+        // window.location.replace("/appointment");
         alert( "second success" );
+        getPatient()
       })
       .fail(function(err) {
         console.log(err);

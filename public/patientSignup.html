@@ -14,21 +14,44 @@
     .hidden {
       display: none;
     }
+
+    .card-text {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .day-table {
+      font-weight: bold;
+      font-size: 15px;
+      text-align: left;
+    }
+
+
+    .icon {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    #email {
+      font-weight: normal;
+      font-size: 17px;
+    }
   </style>
 </head>
 
 <body>
   <div class="topnav">
     <a class="active" style="font-family: 'Caveat', sans-serif;
-    font-size: 20px;"><img src="./css/assets/noun_Heart_3748938.png" id="nav-img" alt="heart icon">CarePoint:
+    font-size: 20px;"><img src="./css/assets/pink-heart.png" id="nav-img" alt="heart icon">CarePoint:
       Healthcare Scheduler</a>
     <a href="/">Home</a>
     <a href="/logout">Log Out</a>
   </div>
 
   <div id="patient-signup-display">
-    <h1><img src="./css/assets/stethescope.png" class="stethescope" alt="stethescope">&nbsp;Sign Up a New
-      Patient&nbsp;<img src="./css/assets/stethescope.png" class="stethescope" alt="stethescope"> </h1>
+    <h1><img class="icon" src="./css/assets/stethescope.png" class="stethescope" alt="stethescope">&nbsp;Sign Up a New
+      Patient&nbsp;<img class="icon" src="./css/assets/stethescope.png" class="stethescope" alt="stethescope"> </h1>
 
     <div class="card" style="width: 50%;">
       <ul class="list-group list-group-flush">
@@ -55,8 +78,9 @@
               <div class="col-lg-6 about-patient ">
                 <table id="patientInfo" class="center">
                   <label style="font-weight: bold; font-size: 18px; text-decoration-line: underline;
-                text-decoration-style: dotted;"><img src="./css/assets/blue-heart.png" alt="heart icon">&nbsp;Your
-                    Information&nbsp;<img src="./css/assets/blue-heart.png" alt="heart icon"></label><br>
+                text-decoration-style: dotted;"><img class="icon" src="./css/assets/blue-heart.png"
+                      alt="heart icon">&nbsp;Your
+                    Information&nbsp;<img class="icon" src="./css/assets/blue-heart.png" alt="heart icon"></label><br>
 
                   <thead>
                     <tr>
@@ -106,8 +130,10 @@
               <div class="col-lg-6 patient-schedule">
                 <table id="patientSchedTable" class="center">
                   <label style="font-weight: bold; font-size: 18px;  text-decoration-line: underline;
-                text-decoration-style: dotted; "><img src="./css/assets/blue-heart.png" alt="heart icon">Days
-                    You Require In-Home Care<img src="./css/assets/blue-heart.png" alt="heart icon"></label>
+                text-decoration-style: dotted; "><img class="icon" src="./css/assets/blue-heart.png"
+                      alt="heart icon">Days
+                    You Require In-Home Care<img class="icon" src="./css/assets/blue-heart.png"
+                      alt="heart icon"></label>
                   <br>
                   <thead>
                     <tr>
@@ -205,15 +231,40 @@
             <p id="patient-address"></p>
             <p class="card-text" id="provider-email"></p>
             <p class="card-text" id="days-of-service">Days of Service: </p>
-            <ul>
-              <li class="hidden" id="app-monday">Monday</li>
-              <li class="hidden" id="app-tuesday">Tuesday</li>
-              <li class="hidden" id="app-wednesday">Wednesday</li>
-              <li class="hidden" id="app-thursday">Thursday</li>
-              <li class="hidden" id="app-friday">Friday</li>
-              <li class="hidden" id="app-saturday">Saturday</li>
-              <li class="hidden" id="app-sunday">Sunday</li>
-            </ul>
+            <table class="center day-table">
+              <tr class="hidden" id="app-monday">
+                <td>&#8226;</td>
+                <td>Monday</td>
+              </tr>
+              <tr class="hidden" id="app-tuesday">
+                <td>&#8226;</td>
+                <td>Tuesday</td>
+              </tr>
+              <tr class="hidden" id="app-wednesday">
+                <td>&#8226;</td>
+                <td>Wednesday</td>
+              </tr>
+              <tr class="hidden" id="app-thursday">
+                <td>&#8226;</td>
+                <td>Thursday</td>
+              </tr>
+              <tr class="hidden" id="app-friday">
+                <td>&#8226;</td>
+                <td>Friday</td>
+              </tr>
+              <tr class="hidden" id="app-saturday">
+
+                <td>&#8226;</td>
+                <td>Saturday</td>
+              </tr>
+              <tr class="hidden" id="app-sunday">
+                <td>&#8226;</td>
+                <td>Sunday</td>
+              </tr>
+
+            </table>
+
+
             <p class="card-text"><small class="text-muted">Please note: all appointments begin at 8 AM and
                 end at 7 PM on the days scheduled.</small></p>
           </div>

@@ -2,7 +2,7 @@
 
   console.log("I'm linked");
 
-// }
+
 $(document).ready(() => {
     // Getting references to our form and input
     const patientForm = $("form.patient-form");
@@ -72,20 +72,20 @@ $(document).ready(() => {
     // Function to get appointment information from database and display it on an appointment card
     function getPatient() {
       $.get("/api/test", function( data ) {
-        alert("test")
         //assign variables to Appointment data values
-        var appointmentNumber = data[0].appointment_id;
-        var patientName = `${data[0].patient_First_name} ${data[0].patient_Last_name}`;
-        var providerName = `${data[0].provider_First_name} ${data[0].provider_last_name}`;
-        var patientAddress = data[0].patient_Address;
-        var providerEmail = `Provider Contact Email: ${data[0].email}`;
-        var mondayInput = data[0].monday;
-        var tuesdayInput = data[0].tuesday;
-        var wednesdayInput = data[0].wednesday;
-        var thursdayInput = data[0].thursday;
-        var fridayInput = data[0].friday;
-        var saturdayInput = data[0].saturday;
-        var sundayInput = data[0].sunday;
+        let appointmentNumber = data[0].appointment_id;
+        let patientName = `${data[0].patient_First_name} ${data[0].patient_Last_name}`;
+        let providerName = `${data[0].provider_First_name} ${data[0].provider_last_name}`;
+        let patientAddress = data[0].patient_Address;
+        let providerEmail = `Provider Contact Email:</p>\n
+        <ul><li id="email">${data[0].email}</li><ul>`;
+        let mondayInput = data[0].monday;
+        let tuesdayInput = data[0].tuesday;
+        let wednesdayInput = data[0].wednesday;
+        let thursdayInput = data[0].thursday;
+        let fridayInput = data[0].friday;
+        let saturdayInput = data[0].saturday;
+        let sundayInput = data[0].sunday;
 
         // change dom to display patient's appointment information
         $("#patient-signup-display").addClass("hidden");
@@ -94,7 +94,7 @@ $(document).ready(() => {
         $("#patient-name").text(patientName);
         $("#provider-name").text(providerName);
         $("#patient-address").text(data[0].patient_Address);
-        $("#provider-email").text(providerEmail);
+        $("#provider-email").html(providerEmail);
 
           // if statements to display only days where service provided
         if (mondayInput === true)  {
@@ -136,7 +136,6 @@ $(document).ready(() => {
     function signUpPatient(firstName, lastName, address, email, medicalNeeds, insurance, monday, tuesday, wednesday,thursday,friday,saturday,sunday ) {
 console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesday, wednesday,thursday,friday,saturday,sunday);
 
-    // Sends data to the patient database
       $.post("/api/patient", {
         patient_First_name: firstName,
         patient_Last_name: lastName,
@@ -154,8 +153,7 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
 
       })
       .done(function() {
-        // window.location.replace("/appointment");
-        alert( "second success" );
+        alert( "Your service days have been scheduled 😀" );
         getPatient()
       })
       .fail(function(err) {
@@ -163,30 +161,22 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
         alert( "error" );
       })
     }
-  
-    // TUTORING HELP:  1) ON Patient API routes line app.delete 104, there's a delete, confirm if this is in the right place
-    
-    // $( "#cancel-appointment" ).click(function() {
 
-    //   $.remove("/api/patient", {
-    //     patient_First_name: firstName,
-    //     patient_Last_name: lastName,
-    //     patient_Address: address,
-    //     email: email,
-    //     medical_needs: medicalNeeds,
-    //     insurance_Type: insurance,
-    //     monday: monday,
-    //     tuesday: tuesday,
-    //     wednesday: wednesday,
-    //     thursday: thursday,
-    //     friday: friday,
-    //     saturday: saturday,
-    //     sunday: sunday,
+    // handler for delete button to delete appointment from appointment table
+    $( "#cancel-appointment" ).click(function() {
+      let appointment = $("#appointment-id").text()
+      $.ajax({
+        url: `/api/patient/appointment/${appointment}`,
+        type: 'DELETE',
+        success: function(result) {
+          alert("Your days of service have been canceled")
+          window.location.replace("/members");
+        }       
 
-    //   })
+      })
 
+    })
       
-    // });
-   });
+  });
   
   

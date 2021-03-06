@@ -9,108 +9,154 @@
 	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans">
 	<style>
-	  
-	  body{
-		padding: 0;
-		margin: 0;
-		background: url('./css/assets/care-point-background.jpg');
-		background-size: cover no-repeat;
-		text-align: center;
-		font-family: "Caveat", sans-serif;  
-  }
-	  h1 {
-		text-align: center;
-		font-family:"Caveat", sans-serif
-			}
-	  h2 {
-		text-align: center;
-		font-family: "Open Sans", sans-serif;
-		font-size: 15px;
-	  }
-	  h3 {
-		text-align: center;
-		font-family: "Open Sans", sans-serif;
-		font-size: 13px;
-	  }
+		body {
+			padding: 0;
+			margin: 0;
+			background: url('./css/assets/care-point-background.jpg');
+			background-size: cover no-repeat;
+			text-align: center;
+			font-family: "Caveat", sans-serif;
+		}
 
-	h5 {
-		font-family: "Open Sans", sans-serif;
-	}
-  
-	  p {
-		text-align: center;
-		font-family: "Open Sans", sans-serif;
-	
-	}
-	  div {text-align: center;}
-	  form {text-align: center;}
-	  label {
-		text-align: center;
-		font-family: "Open Sans";
-	  }
-	  input {text-align: center;}
-	  select {text-align: center;}
-	  button {text-align: center;}
-	  a {font-family: "Open-Sans", sans-serif;}
-	  #branding {font-family: "Caveat", sans-serif;}
+		h1 {
+			text-align: center;
+			font-family: "Caveat", sans-serif
+		}
 
-	  button {font-family: "Open-Sans", sans-serif;}
+		h2 {
+			text-align: center;
+			font-family: "Open Sans", sans-serif;
+			font-size: 15px;
+		}
+
+		h3 {
+			text-align: center;
+			font-family: "Open Sans", sans-serif;
+			font-size: 13px;
+		}
+
+		h5 {
+			font-family: "Open Sans", sans-serif;
+		}
+
+		p {
+			text-align: center;
+			font-family: "Open Sans", sans-serif;
+
+		}
+
+		div {
+			text-align: center;
+		}
+
+		form {
+			text-align: center;
+		}
+
+		label {
+			text-align: center;
+			font-family: "Open Sans";
+		}
+
+		input {
+			text-align: center;
+		}
+
+		select {
+			text-align: center;
+		}
+
+		button {
+			text-align: center;
+		}
+
+		a {
+			font-family: "Open-Sans", sans-serif;
+		}
+
+		#branding {
+			font-family: "Caveat", sans-serif;
+		}
+
+		button {
+			font-family: "Open-Sans", sans-serif;
+		}
+
+		.hidden {
+			display: none;
+		}
 	</style>
 </head>
 
 <body>
 	<nav class="navbar navbar-default" style="background-color: white;">
 		<div class="container-fluid">
-		  <div class="navbar-header">
-			<a class="navbar-brand" id="branding">
-			  CarePoint: Healthcare Scheduler
-			</a>
-			<a class="navbar-brand" href="/">
-			  Home
-			</a>
-			<a class="navbar-brand" href="/logout">
-			  Logout
-			</a>
-		  </div>
+			<div class="navbar-header">
+				<a class="navbar-brand" id="branding">
+					CarePoint: Healthcare Scheduler
+				</a>
+				<a class="navbar-brand" href="/">
+					Home
+				</a>
+				<a class="navbar-brand" href="/logout">
+					Logout
+				</a>
+			</div>
 		</div>
-	  </nav>
+	</nav>
 	<!-- <div class="container"> -->
-		<!-- <div class="row"> -->
-			<!-- <div class="col-md-6 offset-md-3"> -->
-				<!-- <ul class="list-group todo-list">
+	<!-- <div class="row"> -->
+	<!-- <div class="col-md-6 offset-md-3"> -->
+	<!-- <ul class="list-group todo-list">
 					<li class="list-group-item new-item"> -->
-						<!-- <form id="todo-form"> -->
-							<br>
-							<br>
-							<br>
-							<div class="container">
-								<div class="row">
-									<div class="col-10">
-											<div class="card mb-3">
-												<img class="card-img-top" src="./css/assets/sucess-care-point.jpg" alt="appointment successfully created">
-												<div class="card-body">
-												<h5 class="card-title">Appointment Confirmation</h5>
-												<p class="card-text"><small class="text-muted">Congrats on creating your standing weekly appointment using the CarePoint system!</small></p>
-												<p class="card-text">Appointment Number: </p>
-												<p class="card-text">Patient Name: </p>
-												<p class="card-text">Provider Name: </p>
-												<p class="card-text">Patient Address: </p>
-												<p class="card-text">Provider Contact Email: </p>
-												<p class="card-text">Days Serviced: </p>
-												<p class="card-text"><small class="text-muted">Please note: all appointments begin at 8 AM and end at 7 PM on the days scheduled.</small></p>
-												</div>
-												<button id="cancel-appointment" type="submit">Cancel Appointment</button>
-											</div>
-									</div>
-								</div>
-							</div>
-						<!-- </form> -->
-					<!-- </li>
+	<!-- <form id="todo-form"> -->
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-10">
+				<div class="card mb-3">
+					<img class="card-img-top" src="./css/assets/sucess-care-point.jpg"
+						alt="appointment successfully created">
+					<div class="card-body">
+						<h5 class="card-title">Appointment Confirmation</h5>
+						<p class="card-text"><small class="text-muted">Congrats on creating your standing weekly
+								appointment using the CarePoint system!</small></p>
+						<p class="card-text">Appointment Number: </p>
+						<p id="appointment-id"></p>
+						<p class="card-text">Patient Name: </p>
+						<p id="patient-name"></p>
+						<p class="card-text">Provider Name: </p>
+						<p id="provider-name"></p>
+						<p class="card-text">Patient Address: </p>
+						<p id="patient-address"></p>
+						<p class="card-text" id="provider-email"></p>
+						<p class="card-text" id="days-of-service">Days of Service: </p>
+						<ul>
+							<li class="hidden" id="ap-monday">Monday</li>
+							<li class="hidden" id="ap-tuesday">Tuesday</li>
+							<li class="hidden" id="ap-wednesday">Wednesday</li>
+							<li class="hidden" id="ap-thursday">Thursday</li>
+							<li class="hidden" id="ap-friday">Friday</li>
+							<li class="hidden" id="ap-saturday">Saturday</li>
+							<li class="hidden" id="ap-Sunday">Sunday</li>
+						</ul>
+						<p class="card-text"><small class="text-muted">Please note: all appointments begin at 8 AM and
+								end at 7 PM on the days scheduled.</small></p>
+					</div>
+					<button id="cancel-appointment" type="submit">Cancel Appointment</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- </form> -->
+	<!-- </li>
 					<span class="todo-container">
 					</span>
 				</ul> -->
-			<!-- </div> -->
-		<!-- </div> -->
+	<!-- </div> -->
+	<!-- </div> -->
 	<!-- </div> -->
 	<!-- Custom Script -->
 	<script src="js/view.js" type="text/javascript"></script>

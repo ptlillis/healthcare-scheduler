@@ -1,7 +1,8 @@
-console.log("am i linked");
-// const function createAppointment {
+// 
 
-// }
+  console.log("I'm linked");
+
+
 $(document).ready(() => {
     // Getting references to our form and input
     const patientForm = $("form.patient-form");
@@ -20,33 +21,11 @@ $(document).ready(() => {
     const sunday = $('#sunday')
 
     
-
-     console.log("am i linked");
-// const function createAppointment {
-
-// }
-$(document).ready(() => {
-    // Getting references to our form and input
-    const patientForm = $("form.patient-form");
-    const patientFirstName = $("input#patient_First_name")
-    const patientLastName = $("input#patient_Last_name")
-    const address = $("input#patient_Address")
-    const patientEmail = $("input#patient-email")
-    const patientNeeds = $("input#patient-medical-needs")
-    const patientInsurance = $("#insurance")
-    const monday = $('#monday')
-    const tuesday = $('#tuesday')
-    const wednesday = $('#wednesday')
-    const thursday = $('#thursday')
-    const friday= $('#friday')
-    const saturday = $('#saturday')
-    const sunday = $('#sunday')
-
-    
-
+//creating event listener for patient form submit
       patientForm.on("submit", event => {
 
       event.preventDefault();
+      //object to assign key-values
       const patientData = {
         
         patient_First_name: patientFirstName.val().trim(),
@@ -66,12 +45,14 @@ $(document).ready(() => {
       
       };
   console.log('patientData',patientData);
+  //validate that patient has submitted important information
       if (!patientData.patient_First_name || !patientData.patient_Last_name || !patientData.patient_Address) {
         return;
       }
      
-      
+      // invoke signupPatient function with argument values passed in
       signUpPatient(patientData.patient_First_name, patientData.patient_Last_name, patientData.patient_Address, patientData.email, patientData.medical_needs, patientData.insurance_Type, patientData.monday, patientData.tuesday, patientData.wednesday, patientData.thursday, patientData.friday, patientData.saturday, patientData.sunday);
+      //clears patient input (may not be necessary)
       patientFirstName.val("");
       patientLastName.val("");
       address.val("");
@@ -86,25 +67,75 @@ $(document).ready(() => {
       saturday.val(false);
       sunday.val(false);
 
-      console.log('signUpPatient');
       
     });
+    // Function to get appointment information from database and display it on an appointment card
     function getPatient() {
       $.get("/api/test", function( data ) {
-        alert("test")
-        console.log(data);
+        //assign variables to Appointment data values
+        let appointmentNumber = data[0].appointment_id;
+        let patientName = `${data[0].patient_First_name} ${data[0].patient_Last_name}`;
+        let providerName = `${data[0].provider_First_name} ${data[0].provider_last_name}`;
+        let patientAddress = data[0].patient_Address;
+        let providerEmail = `Provider Contact Email:</p>\n
+        <ul><li id="email">${data[0].email}</li><ul>`;
+        let mondayInput = data[0].monday;
+        let tuesdayInput = data[0].tuesday;
+        let wednesdayInput = data[0].wednesday;
+        let thursdayInput = data[0].thursday;
+        let fridayInput = data[0].friday;
+        let saturdayInput = data[0].saturday;
+        let sundayInput = data[0].sunday;
+
+        // change dom to display patient's appointment information
+        $("#patient-signup-display").addClass("hidden");
+        $("#appointment-page-display").removeClass("hidden");
+        $("#appointment-id").text(appointmentNumber);
+        $("#patient-name").text(patientName);
+        $("#provider-name").text(providerName);
+        $("#patient-address").text(data[0].patient_Address);
+        $("#provider-email").html(providerEmail);
+
+          // if statements to display only days where service provided
+        if (mondayInput === true)  {
+          $("#app-monday").removeClass("hidden")
+        }
+        else {}
+
+        if (tuesdayInput === true) {
+          $("#app-tuesday").removeClass("hidden")}
+        else{} 
+        if (wednesdayInput === true) {
+          $("#app-wednesday").removeClass("hidden")}
+        else{} 
+        if (thursdayInput === true) {
+        $("#app-thursday").removeClass("hidden")
+        }
+        else {}
+        if (fridayInput === true) {
+        $("#app-friday").removeClass("hidden")
+        }
+        else {}
+        if  (saturdayInput === true){
+          $("#app-saturday").removeClass("hidden")
+        }
+
+        else {}
+        if (sundayInput === true ){
+          $("#app-sunday").removeClass("hidden")
+        }
+        else{}      
+
       });
     }
 
 
 
 
-
-    // Does a post to the signup route. If successful, we are redirected to the members page
-    // Otherwise we log any errors
+    // define signupPatient function
     function signUpPatient(firstName, lastName, address, email, medicalNeeds, insurance, monday, tuesday, wednesday,thursday,friday,saturday,sunday ) {
 console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesday, wednesday,thursday,friday,saturday,sunday);
-    // Confused which api post should be
+
       $.post("/api/patient", {
         patient_First_name: firstName,
         patient_Last_name: lastName,
@@ -121,10 +152,8 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
         sunday: sunday,
 
       })
-      // createAppointment()
       .done(function() {
-        // window.location.replace("/appointment");
-        alert( "second success" );
+        alert( "Your service days have been scheduled 😀" );
         getPatient()
       })
       .fail(function(err) {
@@ -132,11 +161,22 @@ console.log(firstName, lastName, address, insurance, medicalNeeds, monday, tuesd
         alert( "error" );
       })
     }
-  
-    // function handleLoginErr(err) {
-    //   $("#alert .msg").text(err.responseJSON);
-    //   $("#alert").fadeIn(500);
-    // }
+
+    // handler for delete button to delete appointment from appointment table
+    $( "#cancel-appointment" ).click(function() {
+      let appointment = $("#appointment-id").text()
+      $.ajax({
+        url: `/api/patient/appointment/${appointment}`,
+        type: 'DELETE',
+        success: function(result) {
+          alert("Your days of service have been canceled")
+          window.location.replace("/members");
+        }       
+
+      })
+
+    })
+      
   });
   
   

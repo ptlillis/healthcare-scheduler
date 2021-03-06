@@ -101,6 +101,15 @@ module.exports = (app) => {
       console.log(dbAppointment.dataValues);
     })})
   })})
+
+  app.delete('/api/patient/appointment/:id', (req, res) => {
+    db.Appointment.destroy({
+      where: {
+        appointment_id: req.params.id,
+      },
+    }).then((dbAppt) => res.json(dbAppt));
+  });
+
     app.delete('/api/patient/:id', (req, res) => {
       db.Patient.destroy({
         where: {

@@ -73,8 +73,8 @@ $(document).ready(() => {
       // createAppointment()
       
       .done(function() {
-        window.location.replace("/appointment");
-        alert( "second success" );
+        window.location.replace("/members");
+        alert( "Your information has been added succesfully ✅" );
       })
       .fail(function(err) {
         console.log(err);

@@ -10,156 +10,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans">
   <link href="./css/styles.css" rel="stylesheet">
 
-  <!-- <style>
-    /* body {
-      padding: 0;
-      margin: 0;
-      /* background: url('./css/assets/care-point-background.jpg');
-      background-size: cover no-repeat; */
-      text-align: center;
-      background-color: #d1f8f8
+  <style>
+    .hidden {
+      display: none;
     }
-
-    .topnav {
-      color: #4e9696;
-      overflow: hidden;
-    }
-
-    /* Style the links inside the navigation bar */
-    .topnav a {
-      float: left;
-      color: #4e9696;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    #nav-img {
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-    }
-
-    .stethescope {
-      border-radius: 50%;
-      height: 10%;
-      width: 10%;
-    }
-
-    h1 {
-      text-align: center;
-      font-family: "Caveat", sans-serif;
-      color: #4e9696;
-    }
-
-    .card {
-      margin: 0 auto;
-      /* Added */
-      float: none;
-      /* Added */
-      margin-bottom: 10px;
-      /* Added */
-      background-color: #d1f8f8 !important;
-      color: #4e9696
-    }
-
-    h3 {
-      text-align: center;
-      font-family: "Open Sans", sans-serif;
-      font-size: 13px;
-    }
-
-    p {
-      text-align: center;
-    }
-
-    div {
-      text-align: center;
-    }
-
-    img {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-
-    }
-
-    form {
-      text-align: center;
-      color: #4e9696
-    }
-
-    label {
-      text-align: center;
-      font-family: "Open Sans";
-      color: #4e9696
-    }
-
-    input {
-      text-align: center;
-    }
-
-    select {
-      text-align: center;
-      background-color: #ffc09c;
-      color: white;
-    }
-
-    button:hover {
-      text-align: center;
-      background-color: #ffc09c;
-      color: white;
-
-    }
-
-    button {
-      background-color: #4e9696;
-      color: white;
-      border-radius: 5px;
-    }
-
-    table {
-      text-align: center;
-    }
-
-    thead {
-      text-align: center;
-    }
-
-    th {
-      font-family: "Open Sans", sans-serif;
-    }
-
-
-
-    a {
-      font-family: "Open-Sans", sans-serif;
-    }
-
-    a:hover {
-      font-weight: bold;
-    }
-
-    option {
-      font-family: "Open-Sans", sans-serif;
-    }
-
-    td {
-      font-family: "Open-Sans", sans-serif;
-      padding-right: 10px;
-      padding-bottom: 6px;
-    }
-
-    #branding {
-      font-family: "Caveat", sans-serif;
-    }
-
-    .center {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>  -->
+  </style>
 </head>
 
 <body>
@@ -170,196 +25,203 @@
     <a href="/">Home</a>
     <a href="/logout">Log Out</a>
   </div>
-  <!-- <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" id="branding">
-          CarePoint: Healthcare Scheduler
-        </a>
-        <a class="navbar-brand" href="/">
-          Home
-        </a>
-        <a class="navbar-brand" href="/logout">
-          Logout
-        </a>
-      </div>
+
+  <div id="patient-signup-display">
+    <h1><img src="./css/assets/stethescope.png" class="stethescope" alt="stethescope">&nbsp;Sign Up a New
+      Patient&nbsp;<img src="./css/assets/stethescope.png" class="stethescope" alt="stethescope"> </h1>
+
+    <div class="card" style="width: 50%;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Complete the form below to schedule your weekly appointments with a CarePoint
+          licensed
+          in-home healthcare
+          provider.</li>
+        <li class="list-group-item">All appointments will occur at the patient's home address from the hours of 8 AM
+          until
+          7 PM.</li>
+        <li class="list-group-item">By submitting your information, you are confirming your availability on these days.
+          If
+          you must change your
+          appointment, please use the cancel button on the next page, and re-submit.</li>
+      </ul>
     </div>
-  </nav> -->
 
-  <h1><img src="./css/assets/stethescope.png" class="stethescope" alt="stethescope">&nbsp;Sign Up a New
-    Patient&nbsp;<img src="./css/assets/stethescope.png" class="stethescope" alt="stethescope"> </h1>
 
-  <div class="card" style="width: 50%;">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Complete the form below to schedule your weekly appointments with a CarePoint licensed
-        in-home healthcare
-        provider.</li>
-      <li class="list-group-item">All appointments will occur at the patient's home address from the hours of 8 AM until
-        7 PM.</li>
-      <li class="list-group-item">By submitting your information, you are confirming your availability on these days. If
-        you must change your
-        appointment, please use the cancel button on the next page, and re-submit.</li>
-    </ul>
-  </div>
-  <!-- <h3>Complete the form below to schedule your weekly appointments with a CarePoint licensed in-home healthcare
-    provider.</h3>
-  <h3>All appointments will occur at the patient's home address from the hours of 8 AM until 7 PM.</h3>
-  <h3>By submitting your information, you are confirming your availability on these days. If you must change your
-    appointment, please use the cancel button on the next page, and re-submit.</h3> -->
+    <form class="patient-form" id="patient-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-6 about-patient ">
+                <table id="patientInfo" class="center">
+                  <label style="font-weight: bold; font-size: 18px; text-decoration-line: underline;
+                text-decoration-style: dotted;"><img src="./css/assets/blue-heart.png" alt="heart icon">&nbsp;Your
+                    Information&nbsp;<img src="./css/assets/blue-heart.png" alt="heart icon"></label><br>
 
-  <form class="patient-form" id="patient-form">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 about-patient ">
-              <table id="patientInfo" class="center">
-                <label style="font-weight: bold; font-size: 18px; text-decoration-line: underline;
-                text-decoration-style: dotted;"><img src="./css/assets/blue-heart.png"
-                    alt="heart icon">&nbsp;Your
-                  Information&nbsp;<img src="./css/assets/blue-heart.png" alt="heart icon"></label><br>
+                  <thead>
+                    <tr>
+                      <th> </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><label>Patient First Name:&nbsp;</label></td>
+                      <td> <input type=" text" id="patient_First_name" name="patient_First_name">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Patient Last Name:</label>
+                      </td>
+                      <td> <input type="text" id="patient_Last_name" name="patient_Last_name">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Patient Street Address, City, State, Zip:</label></td>
+                      <td><input type="text" id="patient_Address" name="patient_Address">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Patient Contact Email:</label>
+                      </td>
+                      <td><input type="text" id="patient-email">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Patient Medical Needs:</label>
+                      </td>
+                      <td> <input type="text" id="patient-medical-needs"></td>
+                    </tr>
+                    <tr>
+                      <td> <label>Does the Patient have Insurance?</label></td>
+                      <td><select name="insurance" id="insurance">
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-                <thead>
-                  <tr>
-                    <th> </th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><label>Patient First Name:&nbsp;</label></td>
-                    <td> <input type=" text" id="patient_First_name" name="patient_First_name">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Patient Last Name:</label>
-                    </td>
-                    <td> <input type="text" id="patient_Last_name" name="patient_Last_name">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Patient Street Address, City, State, Zip:</label></td>
-                    <td><input type="text" id="patient_Address" name="patient_Address">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Patient Contact Email:</label>
-                    </td>
-                    <td><input type="text" id="patient-email">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Patient Medical Needs:</label>
-                    </td>
-                    <td> <input type="text" id="patient-medical-needs"></td>
-                  </tr>
-                  <tr>
-                    <td> <label>Does the Patient have Insurance?</label></td>
-                    <td><select name="insurance" id="insurance">
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                      </select></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <!-- <label>Patient First Name:</label><br>
-                <input type="text" id="patient_First_name" name="patient_First_name"><br> -->
-              <!-- <label>Patient Last Name:</label><br>
-                <input type="text" id="patient_Last_name" name="patient_Last_name"><br> -->
-              <!-- <label>Patient Street Address, City, State, Zip:</label><br>
-                <input type="text" id="patient_Address" name="patient_Address"><br> -->
-              <!-- <label>Patient Contact Email:</label><br>
-                <input type="text" id="patient-email"><br> -->
-              <!-- <label>Patient Medical Needs:</label><br>
-                <input type="text" id="patient-medical-needs"><br> -->
-              <!-- <label>Does the Patient have Insurance?</label><br>
-                <select name="insurance" id="insurance">
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select> -->
-            </div>
-
-            <div class="col-lg-6 patient-schedule">
-              <table id="patientSchedTable" class="center">
-                <label style="font-weight: bold; font-size: 18px;  text-decoration-line: underline;
+              <div class="col-lg-6 patient-schedule">
+                <table id="patientSchedTable" class="center">
+                  <label style="font-weight: bold; font-size: 18px;  text-decoration-line: underline;
                 text-decoration-style: dotted; "><img src="./css/assets/blue-heart.png" alt="heart icon">Days
-                  You Require In-Home Care<img src="./css/assets/blue-heart.png" alt="heart icon"></label>
+                    You Require In-Home Care<img src="./css/assets/blue-heart.png" alt="heart icon"></label>
+                  <br>
+                  <thead>
+                    <tr>
+                      <th> </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><label>Monday</label><br></td>
+                      <td><select name=" monday" id="monday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Tuesday</label><br></td>
+                      <td> <select name="tuesday" id="tuesday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Wednesday</label><br></td>
+                      <td> <select name="wednesday" id="wednesday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Thursday</label><br></td>
+                      <td><select name="thursday" id="thursday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Friday</label><br></td>
+                      <td> <select name="friday" id="friday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Saturday</label><br></td>
+                      <td> <select name="saturday" id="saturday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label>Sunday</label><br></td>
+                      <td> <select name="sunday" id="sunday">
+                          <option value="false">No</option>
+                          <option value="true">Yes</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
                 <br>
-                <thead>
-                  <tr>
-                    <th> </th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><label>Monday</label><br></td>
-                    <td><select name=" monday" id="monday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Tuesday</label><br></td>
-                    <td> <select name="tuesday" id="tuesday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Wednesday</label><br></td>
-                    <td> <select name="wednesday" id="wednesday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Thursday</label><br></td>
-                    <td><select name="thursday" id="thursday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Friday</label><br></td>
-                    <td> <select name="friday" id="friday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Saturday</label><br></td>
-                    <td> <select name="saturday" id="saturday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Sunday</label><br></td>
-                    <td> <select name="sunday" id="sunday">
-                        <option value="false">No</option>
-                        <option value="true">Yes</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>
+              </div>
             </div>
+            <button id="submit-patient" type="submit">Make Appointment</button>
           </div>
-          <button id="submit-patient" type="submit">Make Appointment</button>
+        </div>
+      </div>
+    </form>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="container hidden" id="appointment-page-display">
+    <div class="row">
+      <div class="col-10">
+        <div class="card mb-3">
+          <img class="card-img-top" src="./css/assets/sucess-care-point.jpg" alt="appointment successfully created">
+          <div class="card-body">
+            <h5 class="card-title">Appointment Confirmation</h5>
+            <p class="card-text"><small class="text-muted">Congrats on creating your standing weekly
+                appointment using the CarePoint system!</small></p>
+            <p class="card-text">Appointment Number: </p>
+            <p id="appointment-id"></p>
+            <p class="card-text">Patient Name: </p>
+            <p id="patient-name"></p>
+            <p class="card-text">Provider Name: </p>
+            <p id="provider-name"></p>
+            <p class="card-text">Patient Address: </p>
+            <p id="patient-address"></p>
+            <p class="card-text" id="provider-email"></p>
+            <p class="card-text" id="days-of-service">Days of Service: </p>
+            <ul>
+              <li class="hidden" id="app-monday">Monday</li>
+              <li class="hidden" id="app-tuesday">Tuesday</li>
+              <li class="hidden" id="app-wednesday">Wednesday</li>
+              <li class="hidden" id="app-thursday">Thursday</li>
+              <li class="hidden" id="app-friday">Friday</li>
+              <li class="hidden" id="app-saturday">Saturday</li>
+              <li class="hidden" id="app-sunday">Sunday</li>
+            </ul>
+            <p class="card-text"><small class="text-muted">Please note: all appointments begin at 8 AM and
+                end at 7 PM on the days scheduled.</small></p>
+          </div>
+          <button id="cancel-appointment" type="submit">Cancel Appointment</button>
         </div>
       </div>
     </div>
-  </form>
-
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/patient-signup.js"></script>

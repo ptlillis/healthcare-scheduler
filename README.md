@@ -10,7 +10,7 @@ This Application can be used by clonning it, open in command prompt, bash or use
 - Open in command prompt(cmd), bash or use the following link
 - Initialize by typing npm i.
 - Last step is type "node server.js" with out the (") and then enter.
-- 
+- For dates of service, it is advised to select Friday, Saturday, & Sunday as there are pre-seeded Providers for the dates.
 
 ### Technologies Used
 
@@ -29,7 +29,7 @@ This Application can be used by clonning it, open in command prompt, bash or use
 
 ## LINK TO THE URL
 
-- The Link To Heroku [healthcare-scheduler](https://afternoon-ridge-29746.herokuapp.com/)
+- The Link To Heroku [healthcare-scheduler](https://immense-escarpment-50949.herokuapp.com/)
 
 ## SCREENSHOTS
 
@@ -41,6 +41,10 @@ This Application can be used by clonning it, open in command prompt, bash or use
 ![Screen Shot 2021-03-04 at 5 35 46 PM](https://user-images.githubusercontent.com/59859358/110040416-c56aed80-7d10-11eb-9cda-2cb7bb7a3e6f.png)
 
 ![Screen Shot 2021-03-04 at 5 36 42 PM](https://user-images.githubusercontent.com/59859358/110040420-c734b100-7d10-11eb-805e-c4cc4c5d2d77.png)
+
+## HEROKU CHALLENGES
+
+After appointment is confirmed, navigating to home page has inconsistently returned an error page. 
 
 ## Contributing
 
